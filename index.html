@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Moshe Aziz - Buyer</title>
+    <link rel="icon" type="image/svg+xml" href="Just logo.svg">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #fff;
+            color: #000;
+        }
+        .container {
+            max-width: 100%;
+            margin: 50px auto;
+            padding: 20px;
+            background-color: #fffbe6;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            animation: fadeIn 1s ease;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        p {
+            margin: 10px 0;
+            font-size: 24px;
+            animation: jumpAround 0.5s ease forwards, fadeInUp 0.7s ease forwards;
+        }
+        @keyframes jumpAround {
+            0% { transform: translateY(0); }
+            25% { transform: translateY(-5px); }
+            50% { transform: translateY(5px); }
+            75% { transform: translateY(-3px); }
+            100% { transform: translateY(0); }
+        }
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .business-name {
+            font-size: 36px;
+            font-weight: bold;
+            color: #000;
+            margin-bottom: 20px;
+            animation: fadeInLeft 0.7s ease forwards;
+        }
+        @keyframes fadeInLeft {
+            from { opacity: 0; transform: translateX(-20px); }
+            to { opacity: 1; transform: translateX(0); }
+        }
+        .position {
+            font-size: 18px;
+            color: #000;
+            margin-bottom: 8px;
+            animation: fadeInRight 0.7s ease forwards;
+        }
+        @keyframes fadeInRight {
+            from { opacity: 0; transform: translateX(20px); }
+            to { opacity: 1; transform: translateX(0); }
+        }
+        @media screen and (max-width: 768px) {
+            .container { margin: 20px auto; padding: 10px; }
+            p { font-size: 22px; }
+            .name { font-size: 30px; }
+            .business-name { font-size: 32px; }
+            .position { font-size: 16px; }
+        }
+        img.logo {
+            max-width: 50px;
+            height: auto;
+            display: block;
+            margin: 0 auto 10px;
+            animation: bounce 0.5s ease forwards;
+        }
+        @keyframes bounce {
+            0% { transform: translateY(-10px); }
+            100% { transform: translateY(0); }
+        }
+        img.headshot {
+            max-width: 100px;
+            height: auto;
+            border-radius: 50%;
+            margin-bottom: 10px;
+            animation: rotate 0.4s linear forwards;
+        }
+        @keyframes rotate {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <img src="Just logo.svg" alt="Jewelers Truly Logo" class="logo">
+        <p class="business-name">Jewelers Truly</p>
+        <img src="Moshe headshot.png" alt="Moshe Aziz" class="headshot">
+        <p class="name">Moshe Aziz</p>
+        <p>Address: 58 W 47th Street</p>
+        <p>#211, New York, NY</p>
+        <p>Call or WhatsApp: <a href="tel:6464641935">646-464-1935</a></p>
+        <p>Email: <a href="mailto:moshe@JewelersTruly.com">moshe@JewelersTruly.com</a></p>
+        <p>JewelersTruly.com</p>
+    </div>
+    <script type="text/javascript" src="https://4cs.gia.edu/interactive-4cs/js/embed.js" charset="UTF-8"></script>
+    <script>
+        var isIPhoneSafari = /iPhone/i.test(navigator.userAgent) && /Safari/i.test(navigator.userAgent);
+        if (isIPhoneSafari) {
+            var iPhoneSafariCatalogLink = document.createElement('a');
+            iPhoneSafariCatalogLink.href = 'galaxy_nameplate_catalog.pdf';
+            var button = document.createElement('button');
+            button.textContent = 'Tap here to view name plates';
+            iPhoneSafariCatalogLink.appendChild(button);
+            document.body.appendChild(iPhoneSafariCatalogLink);
+        } else {
+            var otherDevicesCatalogLink = document.createElement('a');
+            otherDevicesCatalogLink.href = 'galaxy_nameplate_catalog.pdf';
+            otherDevicesCatalogLink.textContent = 'View name plates';
+            document.body.appendChild(otherDevicesCatalogLink);
+        }
+    </script> 
+</body>
+</html>
