@@ -11,23 +11,23 @@
             margin: 0;
             padding: 0;
             background-color: #fff;
-            color: #000;
+            color: #003366; /* Dark blue color */
         }
-            .bsd {
+        .bsd {
             position: absolute;
             top: 10px;
             right: 20px;
             font-size: 16px;
             font-weight: bold;
             color: #fff;
-
-            .slogan {
+        }
+        .slogan {
             font-size: 10pt;
             text-align: center;
             margin: 0 auto;
             width: fit-content;
-          }
-                
+            color: #003366; /* Dark blue color */
+        }
         .container {
             max-width: 100%;
             margin: 50px auto;
@@ -46,6 +46,7 @@
             margin: 5px 0;
             font-size: 24px;
             animation: jumpAround 0.5s ease forwards, fadeInUp 0.7s ease forwards;
+            color: #003366; /* Dark blue color */
         }
         @keyframes jumpAround {
             0% { transform: translateY(0); }
@@ -61,7 +62,7 @@
         .business-name {
             font-size: 36px;
             font-weight: bold;
-            color: #000;
+            color: #003366; /* Dark blue color */
             margin-bottom: 10px;
             animation: fadeInLeft 0.7s ease forwards;
         }
@@ -69,15 +70,21 @@
             from { opacity: 0; transform: translateX(-20px); }
             to { opacity: 1; transform: translateX(0); }
         }
-        .position {
-            font-size: 18px;
-            color: #000;
+        .name {
+            font-size: 24px;
+            color: #003366; /* Dark blue color */
             margin-bottom: 8px;
             animation: fadeInRight 0.7s ease forwards;
         }
         @keyframes fadeInRight {
             from { opacity: 0; transform: translateX(20px); }
             to { opacity: 1; transform: translateX(0); }
+        }
+        .position {
+            font-size: 18px;
+            color: #003366; /* Dark blue color */
+            margin-bottom: 8px;
+            animation: fadeInRight 0.7s ease forwards;
         }
         @media screen and (max-width: 768px) {
             .container { margin: 20px auto; padding: 10px; }
@@ -111,9 +118,8 @@
     </style>
 </head>
 <body>
-        <div class="bsd">בס״ד</div>
-        <p class="slogan">Turning Your Vison into Jewelery</p>
-    </header>
+    <div class="bsd">בס״ד</div>
+    <p class="slogan">Turning Your Vision into Jewelry</p>
     <div class="container">
         <img src="Logo-7-8-24-TransparentJT.png" alt="Jewelers Truly Logo" class="logo">
         <p class="business-name">Jewelers Truly</p>
@@ -121,9 +127,9 @@
         <p class="name">Moshe Aziz</p>
         <p>Address: 58 W 47th Street</p>
         <p>#211, New York, NY</p>
-        <p>Call or WhatsApp: <a href="tel:6464641935">+1(646) 464-1935</a></p>
-        <p>Email: <a href="mailto:moshe@JewelersTruly.com">moshe@JewelersTruly.com</a></p>
-        <p><a href="https://www.jewelerstruly.com" target="_blank">JewelersTruly.com</a></p>
+        <p>Call or WhatsApp: <a href="tel:6464641935" style="color:#003366;">+1(646) 464-1935</a></p>
+        <p>Email: <a href="mailto:moshe@JewelersTruly.com" style="color:#003366;">moshe@JewelersTruly.com</a></p>
+        <p><a href="https://www.jewelerstruly.com" target="_blank" style="color:#003366;">JewelersTruly.com</a></p>
     </div>
     <script type="text/javascript" src="https://4cs.gia.edu/interactive-4cs/js/embed.js" charset="UTF-8"></script>
     <script>
@@ -144,5 +150,4 @@
     </script> 
 </body>
 </html>
-
 
