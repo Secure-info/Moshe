@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Moshe Aziz - Buyer</title>
-    <link rel="icon" type="image/svg+xml" href="Just logo.svg">
+    <link rel="icon" type="image/svg+xml" href="Logo-7-8-24-TransparentJT.png">
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -97,7 +97,7 @@
 </head>
 <body>
     <div class="container">
-        <img src="Just logo.svg" alt="Jewelers Truly Logo" class="logo">
+        <img src="Logo-7-8-24-TransparentJT.png" alt="Jewelers Truly Logo" class="logo">
         <p class="business-name">Jewelers Truly</p>
         <img src="1681476923082.jpeg" alt="Moshe Aziz" class="headshot">
         <p class="name">Moshe Aziz</p>
@@ -116,5 +116,15 @@
             var button = document.createElement('button');
             button.textContent = 'Tap here to view name plates';
             iPhoneSafariCatalogLink.appendChild(button);
-            document
+            document.body.appendChild(iPhoneSafariCatalogLink);
+        } else {
+            var otherDevicesCatalogLink = document.createElement('a');
+            otherDevicesCatalogLink.href = 'galaxy_nameplate_catalog.pdf';
+            otherDevicesCatalogLink.textContent = 'View name plates';
+            document.body.appendChild(otherDevicesCatalogLink);
+        }
+    </script> 
+</body>
+</html>
+
 
