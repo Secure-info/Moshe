@@ -6,28 +6,29 @@
     <title>Moshe Aziz</title>
     <link rel="icon" type="image/png" href="Logo-7-8-24-TransparentJT.png">
     <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #fff;
-            color: #000060; /* Darker font color for better contrast */
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            min-height: 100vh;
-        }
-        .container {
-            width: 100%;
-            max-width: 400px;
-            margin: 5px;
-            padding: 5px;
-            background-color: #fffbe6;
-            border-radius: 12px;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-            text-align: center;
-            animation: fadeIn 1s ease;
-        }
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #fff;
+    color: #000060; /* Darker font color for better contrast */
+    display: flex;
+    justify-content: center; /* Center horizontally */
+    align-items: flex-start; /* Align to the top */
+    min-height: 100vh; /* Ensures the body fills the viewport height */
+}
+.container {
+    width: 100%;
+    max-width: 400px;
+    margin: 20px 5px; /* Add more margin to create space from the top */
+    padding: 5px;
+    background-color: #fffbe6;
+    border-radius: 5px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    animation: fadeIn 1s ease;
+}
+
         @keyframes fadeIn {
             from { opacity: 0; }
             to { opacity: 1; }
@@ -44,7 +45,7 @@
             100% { transform: translateY(0); }
         }
         .business-name {
-            font-size: 30px; /* Slightly reduced size for better balance */
+            font-size: 36px; /* Slightly reduced size for better balance */
             font-weight: bold;
             color: #000060; /* Darker font color */
             margin: 5px 0 2px 0; /* Reduced spacing around business name */
@@ -156,9 +157,12 @@
             <a href="https://www.instagram.com/jewelers_truly/" class="hover-effect"><img src="logoinsta.png" alt="Instagram"></a>
             <a href="https://www.tiktok.com/@jewelers_truly?_t=8n0ifSYprnb&_r=1" class="hover-effect"><img src="logotiktak.png" alt="TikTok"></a>
         </div>
-    </div>
-    <script type="text/javascript" src="https://4cs.gia.edu/interactive-4cs/js/embed.js" charset="UTF-8"></script>
+         <div>
+             <script type="text/javascript" src="https://4cs.gia.edu/interactive-4cs/js/embed.js" charset="UTF-8"></script>  
+             <div>
     <script>
+    </div>
+   
         // Add click event to the hover-effect class
         document.querySelectorAll('.hover-effect').forEach(item => {
             item.addEventListener('click', event => {
