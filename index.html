@@ -10,40 +10,44 @@
             font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
-            background-color: #e6f7ff; /* Light blue background for contrast */
+            background-color: #e6f7ff; /* Light blue background */
             color: #0000ff; /* Blue font color */
             display: flex;
             justify-content: center;
             align-items: center;
             min-height: 100vh;
+            flex-direction: column; /* Align items top to bottom */
         }
         .container {
-            max-width: 1200px; /* Ensure content width is manageable on desktop */
-            margin: 20px auto;
-            padding: 20px;
+            max-width: 80vw; /* Adjust based on viewport width */
+            max-height: 90vh; /* Adjust based on viewport height */
+            margin: 2vh auto; /* Margin relative to viewport height */
+            padding: 2vw 2vh; /* Padding relative to both viewport dimensions */
             background-color: #ffffff; /* Light background for container */
-            border-radius: 12px;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            border-radius: 1.5vw; /* Relative border-radius */
+            box-shadow: 0 0.5vw 1.5vw rgba(0, 0, 0, 0.1);
             text-align: center;
             animation: fadeIn 1s ease;
             color: #0000ff; /* Ensure text inside the container is blue */
+            display: flex;
+            flex-direction: column;
+            justify-content: space-around;
         }
         @keyframes fadeIn {
             from { opacity: 0; }
             to { opacity: 1; }
         }
         .logo {
-            max-width: 200px; /* Increased size for desktop */
-            width: 20%; /* Adjust percentage as necessary */
+            max-width: 15vw; /* Adjust size relative to viewport */
             height: auto;
-            margin-bottom: 20px;
+            margin-bottom: 2vh; /* Margin based on viewport height */
             animation: bounce 0.5s ease forwards;
         }
         .icon {
-            width: 24px;
-            height: 24px;
+            width: 2.5vw; /* Icon size relative to viewport width */
+            height: 2.5vw; /* Icon size relative to viewport width */
             vertical-align: middle;
-            margin-right: 8px;
+            margin-right: 1vw; /* Adjust margin based on viewport width */
             transition: transform 0.3s ease, filter 0.3s ease;
             cursor: pointer;
         }
@@ -52,12 +56,12 @@
             filter: brightness(1.2);
         }
         .social-icons {
-            margin-top: 15px;
+            margin-top: 2vh; /* Margin based on viewport height */
         }
         .social-icons img {
-            width: 50px; /* Increased size for desktop */
-            height: 50px;
-            margin-right: 15px;
+            width: 5vw; /* Icon size relative to viewport width */
+            height: 5vw; /* Icon size relative to viewport width */
+            margin-right: 2vw; /* Adjust margin based on viewport width */
             transition: transform 0.3s ease, filter 0.3s ease;
             cursor: pointer;
         }
@@ -66,36 +70,35 @@
             filter: brightness(1.2);
         }
         @keyframes bounce {
-            0% { transform: translateY(-10px); }
+            0% { transform: translateY(-1vw); }
             100% { transform: translateY(0); }
         }
         .business-name {
-            font-size: 32px;
+            font-size: 4vw; /* Text size relative to viewport width */
             font-weight: bold;
             color: #0000ff; /* Blue color for business name */
-            margin-bottom: 20px;
+            margin-bottom: 2vh; /* Margin based on viewport height */
             animation: fadeInLeft 0.7s ease forwards;
         }
         @keyframes fadeInLeft {
-            from { opacity: 0; transform: translateX(-20px); }
+            from { opacity: 0; transform: translateX(-2vw); }
             to { opacity: 1; transform: translateX(0); }
         }
         .name, .contact-info {
-            font-size: 20px;
+            font-size: 2.5vw; /* Text size relative to viewport width */
             color: #0000ff; /* Blue color for name and contact info */
-            margin-bottom: 15px;
+            margin-bottom: 1.5vh; /* Margin based on viewport height */
             animation: fadeInRight 0.7s ease forwards;
         }
         @keyframes fadeInRight {
-            from { opacity: 0; transform: translateX(20px); }
+            from { opacity: 0; transform: translateX(2vw); }
             to { opacity: 1; transform: translateX(0); }
         }
         .headshot {
-            max-width: 150px; /* Increased size for desktop */
-            width: 30%; /* Adjust percentage as necessary */
+            max-width: 20vw; /* Image size relative to viewport width */
             height: auto;
             border-radius: 50%;
-            margin-bottom: 20px;
+            margin-bottom: 2vh; /* Margin based on viewport height */
             animation: rotate 0.4s linear forwards;
         }
         @keyframes rotate {
@@ -111,18 +114,24 @@
         }
         @media screen and (max-width: 768px) {
             .logo {
-                max-width: 100px;
-                width: 50%;
+                max-width: 25vw; /* Adjusted for smaller screens */
             }
             .headshot {
-                max-width: 80px;
-                width: 50%;
+                max-width: 25vw;
             }
             .business-name {
-                font-size: 28px;
+                font-size: 6vw;
             }
             .name, .contact-info {
-                font-size: 18px;
+                font-size: 4vw;
+            }
+            .social-icons img {
+                width: 7vw; /* Adjusted for smaller screens */
+                height: 7vw;
+            }
+            .icon {
+                width: 3vw; /* Adjusted for smaller screens */
+                height: 3vw;
             }
         }
     </style>
