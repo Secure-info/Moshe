@@ -1,57 +1,148 @@
-/* Ensure full-width content on larger screens */
-.container {
-    max-width: 1200px;
-    margin: auto;
-    padding: 20px;
-    background-color: #ffffff;
-    border-radius: 12px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-    text-align: center;
-    animation: fadeIn 1s ease;
-    color: #0000ff;
-}
-
-/* Adjust margins and padding */
-body {
-    margin: 0;
-    padding: 0;
-    background-color: #e6f7ff;
-    color: #0000ff;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 100vh;
-}
-
-/* Adjust the content width for the logo, headshot, and social icons */
-.logo {
-    max-width: 200px; /* Increase logo size on desktop */
-    width: 20%; /* Adjust percentage as necessary */
-    height: auto;
-    margin-bottom: 20px;
-    animation: bounce 0.5s ease forwards;
-}
-
-.headshot {
-    max-width: 150px; /* Increase headshot size on desktop */
-    width: 30%; /* Adjust percentage as necessary */
-    height: auto;
-    border-radius: 50%;
-    margin-bottom: 20px;
-    animation: rotate 0.4s linear forwards;
-}
-
-.social-icons img {
-    width: 50px; /* Increase icon size on desktop */
-    height: 50px;
-    margin-right: 15px;
-    transition: transform 0.3s ease, filter 0.3s ease;
-    cursor: pointer;
-}
-
-/* Additional media query for very large screens */
-@media screen and (min-width: 1600px) {
-    .container {
-        max-width: 1400px;
-    }
-}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Moshe Aziz</title>
+    <link rel="icon" type="image/png" href="Logo-7-8-24-TransparentJT.png">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #e6f7ff; /* Light blue background for contrast */
+            color: #0000ff; /* Blue font color */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+        .container {
+            max-width: 1200px; /* Ensure content width is manageable on desktop */
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #ffffff; /* Light background for container */
+            border-radius: 12px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            animation: fadeIn 1s ease;
+            color: #0000ff; /* Ensure text inside the container is blue */
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        .logo {
+            max-width: 200px; /* Increased size for desktop */
+            width: 20%; /* Adjust percentage as necessary */
+            height: auto;
+            margin-bottom: 20px;
+            animation: bounce 0.5s ease forwards;
+        }
+        .icon {
+            width: 24px;
+            height: 24px;
+            vertical-align: middle;
+            margin-right: 8px;
+            transition: transform 0.3s ease, filter 0.3s ease;
+            cursor: pointer;
+        }
+        .icon:hover {
+            transform: scale(1.1);
+            filter: brightness(1.2);
+        }
+        .social-icons {
+            margin-top: 15px;
+        }
+        .social-icons img {
+            width: 50px; /* Increased size for desktop */
+            height: 50px;
+            margin-right: 15px;
+            transition: transform 0.3s ease, filter 0.3s ease;
+            cursor: pointer;
+        }
+        .social-icons img:hover {
+            transform: scale(1.1);
+            filter: brightness(1.2);
+        }
+        @keyframes bounce {
+            0% { transform: translateY(-10px); }
+            100% { transform: translateY(0); }
+        }
+        .business-name {
+            font-size: 32px;
+            font-weight: bold;
+            color: #0000ff; /* Blue color for business name */
+            margin-bottom: 20px;
+            animation: fadeInLeft 0.7s ease forwards;
+        }
+        @keyframes fadeInLeft {
+            from { opacity: 0; transform: translateX(-20px); }
+            to { opacity: 1; transform: translateX(0); }
+        }
+        .name, .contact-info {
+            font-size: 20px;
+            color: #0000ff; /* Blue color for name and contact info */
+            margin-bottom: 15px;
+            animation: fadeInRight 0.7s ease forwards;
+        }
+        @keyframes fadeInRight {
+            from { opacity: 0; transform: translateX(20px); }
+            to { opacity: 1; transform: translateX(0); }
+        }
+        .headshot {
+            max-width: 150px; /* Increased size for desktop */
+            width: 30%; /* Adjust percentage as necessary */
+            height: auto;
+            border-radius: 50%;
+            margin-bottom: 20px;
+            animation: rotate 0.4s linear forwards;
+        }
+        @keyframes rotate {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+        a {
+            color: #0000ff; /* Blue color for links */
+            text-decoration: none;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+        @media screen and (max-width: 768px) {
+            .logo {
+                max-width: 100px;
+                width: 50%;
+            }
+            .headshot {
+                max-width: 80px;
+                width: 50%;
+            }
+            .business-name {
+                font-size: 28px;
+            }
+            .name, .contact-info {
+                font-size: 18px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <img src="Logo-7-8-24-TransparentJT.png" alt="Jewelers Truly Logo" class="logo">
+        <p class="business-name">Jewelers Truly</p>
+        <img src="1681476923082.jpeg" alt="Moshe Aziz" class="headshot">
+        <p class="name">Moshe Aziz</p>
+        <p><img src="logophone.png" alt="Phone Icon" class="icon" onclick="alert('Calling Moshe Aziz...')">+1(646) 464-1935</p>
+        <p><img src="logoaddress.png" alt="Map Icon" class="icon" onclick="window.open('https://maps.google.com?q=58+W+47th+Street,+New+York,+NY', '_blank')">58 W 47th Street, New York, NY</p>
+        <p><img src="logoemail.png" alt="Email Icon" class="icon" onclick="window.location.href='mailto:moshe@JewelersTruly.com'"><a href="mailto:moshe@JewelersTruly.com">moshe@JewelersTruly.com</a></p>
+        <p><img src="logowebsite.png" alt="Website Icon" class="icon" onclick="window.open('https://www.jewelerstruly.com', '_blank')"><a href="https://www.jewelerstruly.com" target="_blank">JewelersTruly.com</a></p>
+        <div class="social-icons">
+            <img src="logolinkedin.png" alt="LinkedIn" onclick="window.open('https://www.linkedin.com/company/jewelers-truly/', '_blank')">
+            <img src="logoinsta.png" alt="Instagram" onclick="window.open('https://www.instagram.com/jewelers_truly/', '_blank')">
+            <img src="logotiktak.png" alt="TikTok" onclick="window.open('https://www.tiktok.com/@jewelers_truly?_t=8n0ifSYprnb&_r=1', '_blank')">
+        </div>
+    </div>
+    <script type="text/javascript" src="https://4cs.gia.edu/interactive-4cs/js/embed.js" charset="UTF-8"></script> 
+</body>
+</html>
