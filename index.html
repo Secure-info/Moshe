@@ -92,22 +92,22 @@ body {
             to { transform: rotate(360deg); }
         }
         .name {
-            font-size: 22px; /* Adjusted for readability */
+            font-size: 30px; /* Adjusted for readability */
             color: #000060; /* Darker font color */
             margin: 2px 0 12px 0; /* Reduced spacing between name and contact info */
             animation: fadeInRight 0.7s ease forwards;
         }
         .contact-info {
-            font-size: 22px;
+            font-size: 26px;
             color: #000060;
             margin-bottom: 12px; /* Consistent spacing for contact info */
             animation: fadeInRight 0.7s ease forwards;
         }
         .icon {
-            width: 24px;
-            height: 24px;
+            width: 28px;
+            height: auto;
             vertical-align: middle;
-            margin-right: 8px;
+            margin-right: 3px;
         }
         a {
             color: #000060; /* Darker font color */
@@ -140,10 +140,10 @@ body {
                 max-width: 80px;
             }
             .business-name {
-                font-size: 26px; /* Adjusted for smaller screens */
+                font-size: 36px; /* Adjusted for smaller screens */
             }
             .name, .contact-info {
-                font-size: 18px; /* Maintained readability on smaller screens */
+                font-size: 26px; /* Maintained readability on smaller screens */
             }
         }
         .hover-effect {
@@ -162,9 +162,15 @@ body {
         <p class="business-name">Jewelers Truly</p>
         <img src="1681476923082.jpeg" alt="Moshe Aziz" class="headshot">
         <p class="name">Moshe Aziz</p>
-        <a href="tel:+16464641935" target="_blank" class="hover-effect">
-            <img src="logowhatsapp.png" alt="WhatsApp Icon" class="icon"> +1(646) 464-1935
-        </a>
+     <div class="contact-links">
+    <!-- WhatsApp link -->
+    <a href="https://wa.me/16464641935" target="_blank" class="hover-effect">
+        <img src="logowhatsapp.png" alt="WhatsApp Icon" class="icon">
+    </a>
+    <!-- Phone call link -->
+    <a href="tel:+16464641935" class="hover-effect">
+        +1(646) 464-1935
+    </a>
         <p class="contact-info">
             <img src="logoadress.png" alt="Map Icon" class="icon"> 58 W 47th Street, New York, NY
         </p>
