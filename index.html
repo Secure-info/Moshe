@@ -6,6 +6,7 @@
     <title>Moshe Aziz</title>
     <link rel="icon" type="image/png" href="Logo-7-8-24-TransparentJT.png">
     <style>
+
 body {
     font-family: Arial, sans-serif;
     margin: 0;
@@ -17,10 +18,11 @@ body {
     align-items: flex-start; /* Align to the top */
     min-height: 100vh; /* Ensures the body fills the viewport height */
 }
+
 .container {
-    width: 100%;
-    max-width: 400px;
-    margin: 20px 5px; /* Add more margin to create space from the top */
+    width: 90%; /* Default width for mobile screens */
+    max-width: 400px; /* Max width for mobile screens */
+    margin: 20px 5px;
     padding: 5px;
     background-color: #fffbe6;
     border-radius: 5px;
@@ -28,6 +30,28 @@ body {
     text-align: center;
     animation: fadeIn 1s ease;
 }
+
+/* Media query for screens wider than 768px (e.g., tablets) */
+@media screen and (min-width: 768px) {
+    .container {
+        max-width: 600px; /* Increase the max width */
+    }
+}
+
+/* Media query for screens wider than 1024px (e.g., laptops/desktops) */
+@media screen and (min-width: 1024px) {
+    .container {
+        max-width: 800px; /* Further increase the max width */
+    }
+}
+
+/* Media query for screens wider than 1440px (e.g., large desktops) */
+@media screen and (min-width: 1440px) {
+    .container {
+        max-width: 1000px; /* Even larger width for very large screens */
+    }
+}
+
 
         @keyframes fadeIn {
             from { opacity: 0; }
