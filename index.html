@@ -6,150 +6,166 @@
     <title>Moshe Aziz</title>
     <link rel="icon" type="image/png" href="Logo-7-8-24-TransparentJT.png">
     <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #fff;
+            color: #000060;
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            min-height: 100vh;
+        }
 
-body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-    background-color: #fff;
-    color: #000060; /* Darker font color for better contrast */
-    display: flex;
-    justify-content: center; /* Center horizontally */
-    align-items: flex-start; /* Align to the top */
-    min-height: 100vh; /* Ensures the body fills the viewport height */
-}
+        .container {
+            width: 90%;
+            max-width: 400px;
+            margin: 20px 5px;
+            padding: 15px; /* Increased padding for better spacing */
+            background-color: #fffbe6;
+            border-radius: 5px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            animation: fadeIn 1s ease;
+        }
 
-.container {
-    width: 90%; /* Default width for mobile screens */
-    max-width: 400px; /* Max width for mobile screens */
-    margin: 20px 5px;
-    padding: 5px;
-    background-color: #fffbe6;
-    border-radius: 5px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-    text-align: center;
-    animation: fadeIn 1s ease;
-}
+        @media screen and (min-width: 768px) {
+            .container {
+                max-width: 600px;
+            }
+        }
 
-/* Media query for screens wider than 768px (e.g., tablets) */
-@media screen and (min-width: 768px) {
-    .container {
-        max-width: 600px; /* Increase the max width */
-    }
-}
+        @media screen and (min-width: 1024px) {
+            .container {
+                max-width: 800px;
+            }
+        }
 
-/* Media query for screens wider than 1024px (e.g., laptops/desktops) */
-@media screen and (min-width: 1024px) {
-    .container {
-        max-width: 800px; /* Further increase the max width */
-    }
-}
-
-/* Media query for screens wider than 1440px (e.g., large desktops) */
-@media screen and (min-width: 1440px) {
-    .container {
-        max-width: 1000px; /* Even larger width for very large screens */
-    }
-}
-
+        @media screen and (min-width: 1440px) {
+            .container {
+                max-width: 1000px;
+            }
+        }
 
         @keyframes fadeIn {
             from { opacity: 0; }
             to { opacity: 1; }
         }
+
         .logo {
             width: 50%;
             max-width: 150px;
             height: auto;
-            margin-bottom: 2px; /* Reduced margin under logo */
+            margin-bottom: 10px; /* Adjusted margin for better spacing */
             animation: bounce 0.5s ease forwards;
         }
+
         @keyframes bounce {
             0% { transform: translateY(-10px); }
             100% { transform: translateY(0); }
         }
+
         .business-name {
-            font-size: 36px; /* Slightly reduced size for better balance */
+            font-size: 36px;
             font-weight: bold;
-            color: #000060; /* Darker font color */
-            margin: 5px 0 2px 0; /* Reduced spacing around business name */
+            color: #000060;
+            margin: 10px 0; /* Adjusted margin */
             animation: fadeInLeft 0.7s ease forwards;
         }
+
         @keyframes fadeInLeft {
             from { opacity: 0; transform: translateX(-20px); }
             to { opacity: 1; transform: translateX(0); }
         }
+
         .headshot {
             width: 60%;
             max-width: 120px;
             height: auto;
             border-radius: 50%;
-            margin-bottom: 5px; /* Reduced margin under profile picture */
+            margin-bottom: 15px; /* Increased margin for better spacing */
             animation: rotate 0.4s linear forwards;
         }
+
         @keyframes rotate {
             from { transform: rotate(0deg); }
             to { transform: rotate(360deg); }
         }
+
         .name {
-            font-size: 30px; /* Adjusted for readability */
-            color: #000060; /* Darker font color */
-            margin: 2px 0 12px 0; /* Reduced spacing between name and contact info */
-            animation: fadeInRight 0.7s ease forwards;
-        }
-        .contact-info {
-            font-size: 26px;
+            font-size: 32px; /* Adjusted font size */
             color: #000060;
-            margin-bottom: 12px; /* Consistent spacing for contact info */
+            margin: 15px 0; /* Adjusted margin */
             animation: fadeInRight 0.7s ease forwards;
         }
+
+        .contact-info {
+            font-size: 28px; /* Adjusted font size */
+            color: #000060;
+            margin-bottom: 20px; /* Consistent spacing for contact info */
+            line-height: 1.5; /* Increased line height for better readability */
+            animation: fadeInRight 0.7s ease forwards;
+        }
+
         .icon {
             width: 28px;
             height: auto;
             vertical-align: middle;
-            margin-right: 3px;
+            margin-right: 5px;
         }
+
         a {
-            color: #000060; /* Darker font color */
+            color: #000060;
             text-decoration: none;
             transition: color 0.3s;
         }
+
         a:hover {
             text-decoration: underline;
             color: #ff6600;
         }
+
         .social-icons {
-            margin-top: 15px;
+            margin-top: 20px;
         }
+
         .social-icons img {
             width: 32px;
             height: 32px;
             margin-right: 10px;
             transition: transform 0.3s;
         }
+
         .social-icons img:hover {
             transform: scale(1.1);
         }
+
         @media screen and (max-width: 768px) {
             .logo {
                 width: 60%;
                 max-width: 100px;
             }
+
             .headshot {
                 width: 50%;
                 max-width: 80px;
             }
+
             .business-name {
-                font-size: 36px; /* Adjusted for smaller screens */
+                font-size: 32px;
             }
+
             .name, .contact-info {
-                font-size: 26px; /* Maintained readability on smaller screens */
+                font-size: 26px;
             }
         }
+
         .hover-effect {
             transition: transform 0.3s, box-shadow 0.3s;
             cursor: pointer;
         }
+
         .hover-effect:hover {
             transform: scale(1.05);
             box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
@@ -162,46 +178,43 @@ body {
         <p class="business-name">Jewelers Truly</p>
         <img src="1681476923082.jpeg" alt="Moshe Aziz" class="headshot">
         <p class="name">Moshe Aziz</p>
-     <div class="contact-links">
-    <!-- WhatsApp link -->
-    <a href="https://wa.me/16464641935" target="_blank" class="hover-effect">
-        <img src="logowhatsapp.png" alt="WhatsApp Icon" class="icon">
-    </a>
-    <!-- Phone call link -->
-    <a href="tel:+16464641935" class="hover-effect">
-        +1(646) 464-1935
-    </a>
-        <p class="contact-info">
-            <img src="logoadress.png" alt="Map Icon" class="icon"> 58 W 47th Street, New York, NY
-        </p>
-        <p class="contact-info">
-            <img src="logoemail.png" alt="Email Icon" class="icon">
-            <a href="mailto:moshe@JewelersTruly.com" class="hover-effect">moshe@JewelersTruly.com</a>
-        </p>
-        <p class="contact-info">
-            <img src="logowebsite.png" alt="Website Icon" class="icon">
-            <a href="https://www.jewelerstruly.com" target="_blank" class="hover-effect">JewelersTruly.com</a>
-        </p>
-        <div class="social-icons">
-            <a href="https://www.linkedin.com/company/jewelers-truy/" class="hover-effect"><img src="logolinkedin.png" alt="LinkedIn"></a>
-            <a href="https://www.instagram.com/jewelers_truly/" class="hover-effect"><img src="logoinsta.png" alt="Instagram"></a>
-            <a href="https://www.tiktok.com/@jewelers_truly?_t=8n0ifSYprnb&_r=1" class="hover-effect"><img src="logotiktak.png" alt="TikTok"></a>
+        <div class="contact-links">
+            <a href="https://wa.me/16464641935" target="_blank" class="hover-effect">
+                <img src="logowhatsapp.png" alt="WhatsApp Icon" class="icon">
+            </a>
+            <a href="tel:+16464641935" class="hover-effect">
+                +1(646) 464-1935
+            </a>
+            <p class="contact-info">
+                <img src="logoadress.png" alt="Map Icon" class="icon"> 58 W 47th Street, New York, NY
+            </p>
+            <p class="contact-info">
+                <img src="logoemail.png" alt="Email Icon" class="icon">
+                <a href="mailto:moshe@JewelersTruly.com" class="hover-effect">moshe@JewelersTruly.com</a>
+            </p>
+            <p class="contact-info">
+                <img src="logowebsite.png" alt="Website Icon" class="icon">
+                <a href="https://www.jewelerstruly.com" target="_blank" class="hover-effect">JewelersTruly.com</a>
+            </p>
+            <div class="social-icons">
+                <a href="https://www.linkedin.com/company/jewelers-truy/" class="hover-effect"><img src="logolinkedin.png" alt="LinkedIn"></a>
+                <a href="https://www.instagram.com/jewelers_truly/" class="hover-effect"><img src="logoinsta.png" alt="Instagram"></a>
+                <a href="https://www.tiktok.com/@jewelers_truly?_t=8n0ifSYprnb&_r=1" class="hover-effect"><img src="logotiktak.png" alt="TikTok"></a>
+            </div>
+            <div>
+                <script type="text/javascript" src="https://4cs.gia.edu/interactive-4cs/js/embed.js" charset="UTF-8"></script>  
+            </div>
+            <script>
+                document.querySelectorAll('.hover-effect').forEach(item => {
+                    item.addEventListener('click', event => {
+                        event.target.style.transform = 'scale(1.1)';
+                        setTimeout(() => {
+                            event.target.style.transform = 'scale(1)';
+                        }, 200);
+                    });
+                });
+            </script>
         </div>
-         <div>
-             <script type="text/javascript" src="https://4cs.gia.edu/interactive-4cs/js/embed.js" charset="UTF-8"></script>  
-             <div>
-    <script>
     </div>
-   
-        // Add click event to the hover-effect class
-        document.querySelectorAll('.hover-effect').forEach(item => {
-            item.addEventListener('click', event => {
-                event.target.style.transform = 'scale(1.1)';
-                setTimeout(() => {
-                    event.target.style.transform = 'scale(1)';
-                }, 200);
-            });
-        });
-    </script>
 </body>
 </html>
