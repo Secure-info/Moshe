@@ -108,7 +108,7 @@
             font-size: 28px; /* Adjusted font size */
             color: #000060;
             margin-bottom: 3px; /* Consistent spacing for contact info */
-            line-height: 1.5; /* Increased line height for better readability */
+            line-height: .9; /* Increased line height for better readability */
             animation: fadeInRight 0.7s ease forwards;
         }
 .icon.logoadress {
@@ -157,9 +157,19 @@
             }
 
             .headshot {
-                width: 50%;
-                max-width: 80px;
-            }
+    width: 60%;
+    max-width: 120px;
+    height: auto;
+    border-radius: 50%;
+    margin-bottom: 15px;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+a:hover .headshot {
+    transform: scale(1.05); /* Slightly enlarge the image on hover */
+    opacity: 0.8; /* Slightly reduce opacity on hover */
+}
+
 
             .business-name {
                 font-size: 32px;
@@ -185,7 +195,9 @@
     <div class="container">
         <img src="Logo-7-8-24-TransparentJT.png" alt="Jewelers Truly Logo" class="logo">
         <p class="business-name">Jewelers Truly</p>
-        <img src="1681476923082.jpeg" alt="Moshe Aziz" class="headshot">
+<a href="https://www.linkedin.com/in/moshe-aziz" target="_blank">
+    <img src="1681476923082.jpeg" alt="Moshe Aziz" class="headshot">
+</a>
         <p class="name">Moshe Aziz</p>
         <div class="contact-links">
           <!-- WhatsApp link -->
