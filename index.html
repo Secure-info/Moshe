@@ -3,123 +3,53 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Jewelers Truly</title>
+    <title>Moshe Aziz</title>
     <link rel="icon" type="image/png" href="Logo-7-8-24-TransparentJT.png">
     <style>
         body {
             font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
-            background-color: #fff;
-            color: #003366; /* Dark blue color */
-        }
-        .bsd {
-            position: absolute;
-            top: 10px;
-            right: 20px;
-            font-size: 16px;
-            font-weight: bold;
-            color: #fff;
-        }
-        .slogan {
-            font-size: 10pt;
-            text-align: center;
-            margin: 0 auto;
-            width: fit-content;
-            color: #003366; /* Dark blue color */
+            background-color: #e6f7ff; /* Complementary background color */
+            color: #0000ff; /* Blue font color */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
         }
         .container {
-            max-width: 100%;
-            margin: 50px auto;
+            max-width: 90%;
+            margin: 20px;
             padding: 20px;
-            background-color: #fffbe6;
-            border-radius: 8px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            background-color: #ffffff; /* Light background for container */
+            border-radius: 12px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
             text-align: center;
             animation: fadeIn 1s ease;
+            color: #0000ff; /* Ensure text inside the container is blue */
         }
         @keyframes fadeIn {
             from { opacity: 0; }
             to { opacity: 1; }
         }
-        p {
-            margin: 5px 0;
-            font-size: 24px;
-            animation: jumpAround 0.5s ease forwards, fadeInUp 0.7s ease forwards;
-            color: #003366; /* Dark blue color */
-        }
-        @keyframes jumpAround {
-            0% { transform: translateY(0); }
-            25% { transform: translateY(-5px); }
-            50% { transform: translateY(5px); }
-            75% { transform: translateY(-3px); }
-            100% { transform: translateY(0); }
-        }
-        @keyframes fadeInUp {
-            from { opacity: 0; transform: translateY(20px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-        .business-name {
-            font-size: 36px;
-            font-weight: bold;
-            color: #003366; /* Dark blue color */
-            margin-bottom: 10px;
-            animation: fadeInLeft 0.7s ease forwards;
-        }
-        @keyframes fadeInLeft {
-            from { opacity: 0; transform: translateX(-20px); }
-            to { opacity: 1; transform: translateX(0); }
-        }
-        .name {
-            font-size: 24px;
-            color: #003366; /* Dark blue color */
-            margin-bottom: 8px;
-            animation: fadeInRight 0.7s ease forwards;
-        }
-        @keyframes fadeInRight {
-            from { opacity: 0; transform: translateX(20px); }
-            to { opacity: 1; transform: translateX(0); }
-        }
-        .position {
-            font-size: 18px;
-            color: #003366; /* Dark blue color */
-            margin-bottom: 8px;
-            animation: fadeInRight 0.7s ease forwards;
-        }
-        @media screen and (max-width: 768px) {
-            .container { margin: 20px auto; padding: 10px; }
-            p { font-size: 22px; }
-            .name { font-size: 30px; }
-            .business-name { font-size: 32px; }
-            .position { font-size: 16px; }
-        }
-        img.logo {
-            max-width: 126px;
+        .logo {
+            max-width: 150px;
+            width: 30%;
             height: auto;
-            display: block;
-            margin: 0 auto 10px;
+            margin-bottom: 20px;
             animation: bounce 0.5s ease forwards;
-        }
-        @keyframes bounce {
-            0% { transform: translateY(-10px); }
-            100% { transform: translateY(0); }
-        }
-        img.headshot {
-            max-width: 100px;
-            height: auto;
-            border-radius: 50%;
-            margin-bottom: 5px;
-            animation: rotate 0.4s linear forwards;
-        }
-        @keyframes rotate {
-            from { transform: rotate(0deg); }
-            to { transform: rotate(360deg); }
         }
         .icon {
             width: 24px;
             height: 24px;
             vertical-align: middle;
             margin-right: 8px;
+            transition: transform 0.3s ease, filter 0.3s ease;
+            cursor: pointer;
+        }
+        .icon:hover {
+            transform: scale(1.1);
+            filter: brightness(1.2);
         }
         .social-icons {
             margin-top: 15px;
@@ -128,62 +58,91 @@
             width: 40px;
             height: 40px;
             margin-right: 10px;
+            transition: transform 0.3s ease, filter 0.3s ease;
+            cursor: pointer;
+        }
+        .social-icons img:hover {
+            transform: scale(1.1);
+            filter: brightness(1.2);
+        }
+        @keyframes bounce {
+            0% { transform: translateY(-10px); }
+            100% { transform: translateY(0); }
+        }
+        .business-name {
+            font-size: 32px;
+            font-weight: bold;
+            color: #0000ff; /* Blue color for business name */
+            margin-bottom: 20px;
+            animation: fadeInLeft 0.7s ease forwards;
+        }
+        @keyframes fadeInLeft {
+            from { opacity: 0; transform: translateX(-20px); }
+            to { opacity: 1; transform: translateX(0); }
+        }
+        .name, .contact-info {
+            font-size: 20px;
+            color: #0000ff; /* Blue color for name and contact info */
+            margin-bottom: 15px;
+            animation: fadeInRight 0.7s ease forwards;
+        }
+        @keyframes fadeInRight {
+            from { opacity: 0; transform: translateX(20px); }
+            to { opacity: 1; transform: translateX(0); }
+        }
+        .headshot {
+            max-width: 120px;
+            width: 40%;
+            height: auto;
+            border-radius: 50%;
+            margin-bottom: 20px;
+            animation: rotate 0.4s linear forwards;
+        }
+        @keyframes rotate {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
         }
         a {
-            color: #003366;
+            color: #0000ff; /* Blue color for links */
             text-decoration: none;
         }
         a:hover {
             text-decoration: underline;
         }
-        .catalog-link button {
-            background-color: #003366;
-            color: #fff;
-            border: none;
-            padding: 10px 20px;
-            font-size: 16px;
-            cursor: pointer;
-            border-radius: 5px;
-            margin-top: 20px;
-        }
-        .catalog-link button:hover {
-            background-color: #002244;
+        @media screen and (max-width: 768px) {
+            .logo {
+                max-width: 100px;
+                width: 50%;
+            }
+            .headshot {
+                max-width: 80px;
+                width: 50%;
+            }
+            .business-name {
+                font-size: 28px;
+            }
+            .name, .contact-info {
+                font-size: 18px;
+            }
         }
     </style>
 </head>
 <body>
-    <div class="bsd">בס״ד</div>
     <div class="container">
         <img src="Logo-7-8-24-TransparentJT.png" alt="Jewelers Truly Logo" class="logo">
         <p class="business-name">Jewelers Truly</p>
         <img src="1681476923082.jpeg" alt="Moshe Aziz" class="headshot">
         <p class="name">Moshe Aziz</p>
-        <p><img src="googlemap.png" alt="Map Icon" class="icon">Address: 58 W 47th Street, New York, NY</p>
-        <p><img src="emailbutton.png" alt="Email Icon" class="icon"><a href="mailto:moshe@JewelersTruly.com">moshe@JewelersTruly.com</a></p>
-        <p><img src="Google_Chrome_icon_.svg.png" alt="Website Icon" class="icon"><a href="https://www.jewelerstruly.com" target="_blank">JewelersTruly.com</a></p>
+        <p><img src="logophone.png" alt="Phone Icon" class="icon" onclick="alert('Calling Moshe Aziz...')">+1(646) 464-1935</p>
+        <p><img src="logoaddress.png" alt="Map Icon" class="icon" onclick="window.open('https://maps.google.com?q=58+W+47th+Street,+New+York,+NY', '_blank')">58 W 47th Street, New York, NY</p>
+        <p><img src="logoemail.png" alt="Email Icon" class="icon" onclick="window.location.href='mailto:moshe@JewelersTruly.com'"><a href="mailto:moshe@JewelersTruly.com">moshe@JewelersTruly.com</a></p>
+        <p><img src="logowebsite.png" alt="Website Icon" class="icon" onclick="window.open('https://www.jewelerstruly.com', '_blank')"><a href="https://www.jewelerstruly.com" target="_blank">JewelersTruly.com</a></p>
         <div class="social-icons">
-            <a href="https://www.linkedin.com/in/moshe-aziz"><img src="linkedin-icon-logo-png-transparent.webp" alt="LinkedIn"></a>
-            <a href="https://www.instagram.com/jewelerstruly"><img src="instagramappbutton.jpeg" alt="Instagram"></a>
-            <a href="https://www.tiktok.com/@jewelerstruly"><img src="tiktokbutton.png" alt="TikTok"></a>
-        </div>
-        <div class="catalog-link">
-            <script type="text/javascript">
-                var isIPhoneSafari = /iPhone/i.test(navigator.userAgent) && /Safari/i.test(navigator.userAgent);
-                if (isIPhoneSafari) {
-                    var iPhoneSafariCatalogLink = document.createElement('a');
-                    iPhoneSafariCatalogLink.href = 'galaxy_nameplate_catalog.pdf';
-                    var button = document.createElement('button');
-                    button.textContent = 'Tap here to view name plates';
-                    iPhoneSafariCatalogLink.appendChild(button);
-                    document.querySelector('.catalog-link').appendChild(iPhoneSafariCatalogLink);
-                } else {
-                    var otherDevicesCatalogLink = document.createElement('a');
-                    otherDevicesCatalogLink.href = 'galaxy_nameplate_catalog.pdf';
-                    otherDevicesCatalogLink.innerHTML = '<button>View name plates</button>';
-                    document.querySelector('.catalog-link').appendChild(otherDevicesCatalogLink);
-                }
-            </script>
+            <img src="logolinkedin.png" alt="LinkedIn" onclick="window.open('https://www.linkedin.com/company/jewelers-truly/', '_blank')">
+            <img src="logoinsta.png" alt="Instagram" onclick="window.open('https://www.instagram.com/jewelers_truly/', '_blank')">
+            <img src="logotiktak.png" alt="TikTok" onclick="window.open('https://www.tiktok.com/@jewelers_truly?_t=8n0ifSYprnb&_r=1', '_blank')">
         </div>
     </div>
+    <script type="text/javascript" src="https://4cs.gia.edu/interactive-4cs/js/embed.js" charset="UTF-8"></script> 
 </body>
 </html>
