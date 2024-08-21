@@ -10,95 +10,80 @@
             font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
-            background-color: #e6f7ff; /* Light blue background */
-            color: #0000ff; /* Blue font color */
+            background-color: #fff;
+            color: #000;
             display: flex;
             justify-content: center;
             align-items: center;
             min-height: 100vh;
-            flex-direction: column; /* Align items top to bottom */
         }
         .container {
-            max-width: 80vw; /* Adjust based on viewport width */
-            max-height: 90vh; /* Adjust based on viewport height */
-            margin: 2vh auto; /* Margin relative to viewport height */
-            padding: 2vw 2vh; /* Padding relative to both viewport dimensions */
-            background-color: #ffffff; /* Light background for container */
-            border-radius: 1.5vw; /* Relative border-radius */
-            box-shadow: 0 0.5vw 1.5vw rgba(0, 0, 0, 0.1);
+            width: 100%;
+            max-width: 400px;
+            margin: 20px;
+            padding: 20px;
+            background-color: #fffbe6;
+            border-radius: 12px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
             text-align: center;
             animation: fadeIn 1s ease;
-            color: #0000ff; /* Ensure text inside the container is blue */
-            display: flex;
-            flex-direction: column;
-            justify-content: space-around;
         }
         @keyframes fadeIn {
             from { opacity: 0; }
             to { opacity: 1; }
         }
         .logo {
-            max-width: 15vw; /* Adjust size relative to viewport */
+            width: 50%;
+            max-width: 150px;
             height: auto;
-            margin-bottom: 2vh; /* Margin based on viewport height */
+            margin-bottom: 20px;
             animation: bounce 0.5s ease forwards;
         }
-        .icon {
-            width: 2.5vw; /* Icon size relative to viewport width */
-            height: 2.5vw; /* Icon size relative to viewport width */
-            vertical-align: middle;
-            margin-right: 1vw; /* Adjust margin based on viewport width */
-            transition: transform 0.3s ease, filter 0.3s ease;
-            cursor: pointer;
-        }
-        .icon:hover {
-            transform: scale(1.1);
-            filter: brightness(1.2);
-        }
-        .social-icons {
-            margin-top: 2vh; /* Margin based on viewport height */
-        }
-        .social-icons img {
-            width: 5vw; /* Icon size relative to viewport width */
-            height: 5vw; /* Icon size relative to viewport width */
-            margin-right: 2vw; /* Adjust margin based on viewport width */
-            transition: transform 0.3s ease, filter 0.3s ease;
-            cursor: pointer;
-        }
-        .social-icons img:hover {
-            transform: scale(1.1);
-            filter: brightness(1.2);
-        }
         @keyframes bounce {
-            0% { transform: translateY(-1vw); }
+            0% { transform: translateY(-10px); }
             100% { transform: translateY(0); }
         }
+        .icon {
+            width: 24px;
+            height: 24px;
+            vertical-align: middle;
+            margin-right: 8px;
+        }
+        .social-icons {
+            margin-top: 15px;
+        }
+        .social-icons img {
+            width: 32px;
+            height: 32px;
+            margin-right: 10px;
+        }
         .business-name {
-            font-size: 4vw; /* Text size relative to viewport width */
+            font-size: 24px;
             font-weight: bold;
-            color: #0000ff; /* Blue color for business name */
-            margin-bottom: 2vh; /* Margin based on viewport height */
+            color: #000;
+            margin-bottom: 20px;
             animation: fadeInLeft 0.7s ease forwards;
         }
         @keyframes fadeInLeft {
-            from { opacity: 0; transform: translateX(-2vw); }
+            from { opacity: 0; transform: translateX(-20px); }
             to { opacity: 1; transform: translateX(0); }
         }
         .name, .contact-info {
-            font-size: 2.5vw; /* Text size relative to viewport width */
-            color: #0000ff; /* Blue color for name and contact info */
-            margin-bottom: 1.5vh; /* Margin based on viewport height */
+            font-size: 18px;
+            color: #000;
+            margin-bottom: 15px;
             animation: fadeInRight 0.7s ease forwards;
         }
         @keyframes fadeInRight {
-            from { opacity: 0; transform: translateX(2vw); }
+            from { opacity: 0; transform: translateX(20px); }
             to { opacity: 1; transform: translateX(0); }
         }
         .headshot {
-            max-width: 20vw; /* Image size relative to viewport width */
+            width: 60%;
+            max-width: 120px;
             height: auto;
             border-radius: 50%;
-            margin-bottom: 2vh; /* Margin based on viewport height */
+            margin-bottom: 20px;
             animation: rotate 0.4s linear forwards;
         }
         @keyframes rotate {
@@ -106,7 +91,7 @@
             to { transform: rotate(360deg); }
         }
         a {
-            color: #0000ff; /* Blue color for links */
+            color: #000;
             text-decoration: none;
         }
         a:hover {
@@ -114,24 +99,18 @@
         }
         @media screen and (max-width: 768px) {
             .logo {
-                max-width: 25vw; /* Adjusted for smaller screens */
+                width: 60%;
+                max-width: 100px;
             }
             .headshot {
-                max-width: 25vw;
+                width: 50%;
+                max-width: 80px;
             }
             .business-name {
-                font-size: 6vw;
+                font-size: 20px;
             }
             .name, .contact-info {
-                font-size: 4vw;
-            }
-            .social-icons img {
-                width: 7vw; /* Adjusted for smaller screens */
-                height: 7vw;
-            }
-            .icon {
-                width: 3vw; /* Adjusted for smaller screens */
-                height: 3vw;
+                font-size: 16px;
             }
         }
     </style>
@@ -142,18 +121,19 @@
         <p class="business-name">Jewelers Truly</p>
         <img src="1681476923082.jpeg" alt="Moshe Aziz" class="headshot">
         <p class="name">Moshe Aziz</p>
-        <p><img src="logophone.png" alt="Phone Icon" class="icon" onclick="alert('Calling Moshe Aziz...')">+1(646) 464-1935</p>
-        <p><img src="logoaddress.png" alt="Map Icon" class="icon" onclick="window.open('https://maps.google.com?q=58+W+47th+Street,+New+York,+NY', '_blank')">58 W 47th Street, New York, NY</p>
-        <p><img src="logoemail.png" alt="Email Icon" class="icon" onclick="window.location.href='mailto:moshe@JewelersTruly.com'"><a href="mailto:moshe@JewelersTruly.com">moshe@JewelersTruly.com</a></p>
-        <p><img src="logowebsite.png" alt="Website Icon" class="icon" onclick="window.open('https://www.jewelerstruly.com', '_blank')"><a href="https://www.jewelerstruly.com" target="_blank">JewelersTruly.com</a></p>
+        <p><img src="logowebsite.png" alt="Phone Icon" class="icon">+1(646)464-1935</p>
+        <p><img src="logoaddress.png" alt="Map Icon" class="icon">58 W 47th Street, New York, NY</p>
+        <p><img src="logoemail.png" alt="Email Icon" class="icon"><a href="mailto:moshe@JewelersTruly.com">moshe@JewelersTruly.com</a></p>
+        <p><img src="logowebsite.png" alt="Website Icon" class="icon"><a href="https://www.jewelerstruly.com" target="_blank">JewelersTruly.com</a></p>
         <div class="social-icons">
-            <img src="logolinkedin.png" alt="LinkedIn" onclick="window.open('https://www.linkedin.com/company/jewelers-truly/', '_blank')">
-            <img src="logoinsta.png" alt="Instagram" onclick="window.open('https://www.instagram.com/jewelers_truly/', '_blank')">
-            <img src="logotiktak.png" alt="TikTok" onclick="window.open('https://www.tiktok.com/@jewelers_truly?_t=8n0ifSYprnb&_r=1', '_blank')">
+            <a href="https://www.linkedin.com/company/jewelers-truy/"><img src="logolinkedin.png" alt="LinkedIn"></a>
+            <a href="https://www.instagram.com/jewelers_truly/"><img src="logoinsta.png" alt="Instagram"></a>
+            <a href="https://www.tiktok.com/@jewelers_truly?_t=8n0ifSYprnb&_r=1"><img src="logotiktak.png" alt="TikTok"></a>
         </div>
     </div>
-    <script type="text/javascript" src="https://4cs.gia.edu/interactive-4cs/js/embed.js" charset="UTF-8"></script> 
+    <script type="text/javascript" src="https://4cs.gia.edu/interactive-4cs/js/embed.js" charset="UTF-8"></script>
 </body>
 </html>
+
 
 
