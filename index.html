@@ -21,8 +21,8 @@
         .container {
             width: 90%;
             max-width: 400px;
-            margin: 20px 5px;
-            padding: 15px; /* Increased padding for better spacing */
+            margin: 5px 5px;
+            padding: 5px; /* Increased padding for better spacing */
             background-color: #fffbe6;
             border-radius: 5px;
             box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
@@ -99,7 +99,12 @@
             margin: 15px 0; /* Adjusted margin */
             animation: fadeInRight 0.7s ease forwards;
         }
-
+.contact-links a {
+    font-size: inherit; /* Inherit the font size from the parent element */
+    color: inherit; /* Inherit the color from the parent element */
+    text-decoration: none; /* Remove underline if not needed */
+    vertical-align: middle; /* Align with icons if present */
+}
         .contact-info {
             font-size: 28px; /* Adjusted font size */
             color: #000060;
@@ -107,12 +112,17 @@
             line-height: 1.5; /* Increased line height for better readability */
             animation: fadeInRight 0.7s ease forwards;
         }
-
+.icon.logoadress {
+    width: 20px; /* Adjust this value to make the icon smaller */
+    height: auto; /* Maintain the aspect ratio */
+    vertical-align: middle; /* Ensure it aligns properly with text */
+    margin-right: 3px; /* Adjust margin if needed */
+}
         .icon {
-            width: 28px;
+            width: 24px;
             height: auto;
             vertical-align: middle;
-            margin-right: 5px;
+            margin-right: 3px;
         }
 
         a {
@@ -127,7 +137,7 @@
         }
 
         .social-icons {
-            margin-top: 20px;
+            margin: 20px;
         }
 
         .social-icons img {
@@ -179,15 +189,21 @@
         <img src="1681476923082.jpeg" alt="Moshe Aziz" class="headshot">
         <p class="name">Moshe Aziz</p>
         <div class="contact-links">
-            <a href="https://wa.me/16464641935" target="_blank" class="hover-effect">
-                <img src="logowhatsapp.png" alt="WhatsApp Icon" class="icon">
-            </a>
+          <!-- WhatsApp link -->
+<a href="https://wa.me/16464641935" target="_blank" class="hover-effect">
+    <img src="logowhatsapp.png" alt="WhatsApp Icon" class="icon">
+</a>
+<!-- Phone call link -->
+<a href="tel:+16464641935" class="hover-effect">
+    +1(646) 464-1935
+</a>
+
             <a href="tel:+16464641935" class="hover-effect">
                 +1(646) 464-1935
             </a>
-            <p class="contact-info">
-                <img src="logoadress.png" alt="Map Icon" class="icon"> 58 W 47th Street, New York, NY
-            </p>
+          <p class="contact-info">
+    <img src="logoadress.png" alt="Map Icon" class="icon logoadress"> 58 W 47th Street, New York, NY
+</p>
             <p class="contact-info">
                 <img src="logoemail.png" alt="Email Icon" class="icon">
                 <a href="mailto:moshe@JewelersTruly.com" class="hover-effect">moshe@JewelersTruly.com</a>
