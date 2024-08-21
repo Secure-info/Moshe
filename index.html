@@ -11,7 +11,7 @@
             margin: 0;
             padding: 0;
             background-color: #fff;
-            color: #000080;
+            color: #000060; /* Darker font color for better contrast */
             display: flex;
             justify-content: center;
             align-items: center;
@@ -20,8 +20,8 @@
         .container {
             width: 100%;
             max-width: 400px;
-            margin: 20px;
-            padding: 20px;
+            margin: 1px;
+            padding: 10px;
             background-color: #fffbe6;
             border-radius: 12px;
             box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
@@ -36,7 +36,7 @@
             width: 50%;
             max-width: 150px;
             height: auto;
-            margin-bottom: 5px;
+            margin-bottom: 3px; /* Reduced margin under logo */
             animation: bounce 0.5s ease forwards;
         }
         @keyframes bounce {
@@ -56,11 +56,15 @@
             width: 32px;
             height: 32px;
             margin-right: 10px;
+            transition: transform 0.3s;
+        }
+        .social-icons img:hover {
+            transform: scale(1.1);
         }
         .business-name {
-            font-size: 32px;
+            font-size: 30px; /* Slightly reduced size for better balance */
             font-weight: bold;
-            color: #000080;
+            color: #000060; /* Darker font color */
             margin-bottom: 5px;
             animation: fadeInLeft 0.7s ease forwards;
         }
@@ -69,9 +73,9 @@
             to { opacity: 1; transform: translateX(0); }
         }
         .name, .contact-info {
-            font-size: 26px;
-            color: #000080;
-            margin-bottom: 15px;
+            font-size: 22px; /* Adjusted for readability */
+            color: #000060; /* Darker font color */
+            margin-bottom: 12px; /* Reduced spacing under text */
             animation: fadeInRight 0.7s ease forwards;
         }
         @keyframes fadeInRight {
@@ -83,7 +87,7 @@
             max-width: 120px;
             height: auto;
             border-radius: 50%;
-            margin-bottom: 5px;
+            margin-bottom: 3px; /* Reduced margin under profile picture */
             animation: rotate 0.4s linear forwards;
         }
         @keyframes rotate {
@@ -91,11 +95,13 @@
             to { transform: rotate(360deg); }
         }
         a {
-            color: #000080;
+            color: #000060; /* Darker font color */
             text-decoration: none;
+            transition: color 0.3s;
         }
         a:hover {
             text-decoration: underline;
+            color: #ff6600;
         }
         @media screen and (max-width: 768px) {
             .logo {
@@ -107,11 +113,19 @@
                 max-width: 80px;
             }
             .business-name {
-                font-size: 26px;
+                font-size: 26px; /* Adjusted for smaller screens */
             }
             .name, .contact-info {
-                font-size: 16px;
+                font-size: 18px; /* Maintained readability on smaller screens */
             }
+        }
+        .hover-effect {
+            transition: transform 0.3s, box-shadow 0.3s;
+            cursor: pointer;
+        }
+        .hover-effect:hover {
+            transform: scale(1.05);
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
         }
     </style>
 </head>
@@ -121,17 +135,38 @@
         <p class="business-name">Jewelers Truly</p>
         <img src="1681476923082.jpeg" alt="Moshe Aziz" class="headshot">
         <p class="name">Moshe Aziz</p>
-<a href="https://wa.me/16464641935" target="_blank">
-    <img src="logowhatsapp.png" alt="WhatsApp Icon" class="icon"> +1(646) 464-1935        
-    <p><img src="logoadress.png" alt="Map Icon" class="icon">58 W 47th Street, New York, NY</p>
-        <p><img src="logoemail.png" alt="Email Icon" class="icon"><a href="mailto:moshe@JewelersTruly.com">moshe@JewelersTruly.com</a></p>
-        <p><img src="logowebsite.png" alt="Website Icon" class="icon"><a href="https://www.jewelerstruly.com" target="_blank">JewelersTruly.com</a></p>
+        <a href="https://wa.me/16464641935" target="_blank" class="hover-effect">
+            <img src="logowhatsapp.png" alt="WhatsApp Icon" class="icon"> +1(646) 464-1935
+        </a>
+        <p class="contact-info">
+            <img src="logoadress.png" alt="Map Icon" class="icon"> 58 W 47th Street, New York, NY
+        </p>
+        <p class="contact-info">
+            <img src="logoemail.png" alt="Email Icon" class="icon">
+            <a href="mailto:moshe@JewelersTruly.com" class="hover-effect">moshe@JewelersTruly.com</a>
+        </p>
+        <p class="contact-info">
+            <img src="logowebsite.png" alt="Website Icon" class="icon">
+            <a href="https://www.jewelerstruly.com" target="_blank" class="hover-effect">JewelersTruly.com</a>
+        </p>
         <div class="social-icons">
-            <a href="https://www.linkedin.com/company/jewelers-truy/"><img src="logolinkedin.png" alt="LinkedIn"></a>
-            <a href="https://www.instagram.com/jewelers_truly/"><img src="logoinsta.png" alt="Instagram"></a>
-            <a href="https://www.tiktok.com/@jewelers_truly?_t=8n0ifSYprnb&_r=1"><img src="logotiktak.png" alt="TikTok"></a>
+            <a href="https://www.linkedin.com/company/jewelers-truy/" class="hover-effect"><img src="logolinkedin.png" alt="LinkedIn"></a>
+            <a href="https://www.instagram.com/jewelers_truly/" class="hover-effect"><img src="logoinsta.png" alt="Instagram"></a>
+            <a href="https://www.tiktok.com/@jewelers_truly?_t=8n0ifSYprnb&_r=1" class="hover-effect"><img src="logotiktak.png" alt="TikTok"></a>
         </div>
     </div>
+
+    <script>
+        // Add click event to the hover-effect class
+        document.querySelectorAll('.hover-effect').forEach(item => {
+            item.addEventListener('click', event => {
+                event.target.style.transform = 'scale(1.1)';
+                setTimeout(() => {
+                    event.target.style.transform = 'scale(1)';
+                }, 200);
+            });
+        });
+    </script>
 </body>
 </html>
 
