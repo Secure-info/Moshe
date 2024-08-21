@@ -20,8 +20,8 @@
         .container {
             width: 100%;
             max-width: 400px;
-            margin: 1px;
-            padding: 10px;
+            margin: 20px;
+            padding: 20px;
             background-color: #fffbe6;
             border-radius: 12px;
             box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
@@ -36,18 +36,62 @@
             width: 50%;
             max-width: 150px;
             height: auto;
-            margin-bottom: 3px; /* Reduced margin under logo */
+            margin-bottom: 2px; /* Reduced margin under logo */
             animation: bounce 0.5s ease forwards;
         }
         @keyframes bounce {
             0% { transform: translateY(-10px); }
             100% { transform: translateY(0); }
         }
+        .business-name {
+            font-size: 30px; /* Slightly reduced size for better balance */
+            font-weight: bold;
+            color: #000060; /* Darker font color */
+            margin: 5px 0 2px 0; /* Reduced spacing around business name */
+            animation: fadeInLeft 0.7s ease forwards;
+        }
+        @keyframes fadeInLeft {
+            from { opacity: 0; transform: translateX(-20px); }
+            to { opacity: 1; transform: translateX(0); }
+        }
+        .headshot {
+            width: 60%;
+            max-width: 120px;
+            height: auto;
+            border-radius: 50%;
+            margin-bottom: 5px; /* Reduced margin under profile picture */
+            animation: rotate 0.4s linear forwards;
+        }
+        @keyframes rotate {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+        .name {
+            font-size: 22px; /* Adjusted for readability */
+            color: #000060; /* Darker font color */
+            margin: 2px 0 12px 0; /* Reduced spacing between name and contact info */
+            animation: fadeInRight 0.7s ease forwards;
+        }
+        .contact-info {
+            font-size: 22px;
+            color: #000060;
+            margin-bottom: 12px; /* Consistent spacing for contact info */
+            animation: fadeInRight 0.7s ease forwards;
+        }
         .icon {
             width: 24px;
             height: 24px;
             vertical-align: middle;
             margin-right: 8px;
+        }
+        a {
+            color: #000060; /* Darker font color */
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        a:hover {
+            text-decoration: underline;
+            color: #ff6600;
         }
         .social-icons {
             margin-top: 15px;
@@ -60,48 +104,6 @@
         }
         .social-icons img:hover {
             transform: scale(1.1);
-        }
-        .business-name {
-            font-size: 30px; /* Slightly reduced size for better balance */
-            font-weight: bold;
-            color: #000060; /* Darker font color */
-            margin-bottom: 5px;
-            animation: fadeInLeft 0.7s ease forwards;
-        }
-        @keyframes fadeInLeft {
-            from { opacity: 0; transform: translateX(-20px); }
-            to { opacity: 1; transform: translateX(0); }
-        }
-        .name, .contact-info {
-            font-size: 22px; /* Adjusted for readability */
-            color: #000060; /* Darker font color */
-            margin-bottom: 12px; /* Reduced spacing under text */
-            animation: fadeInRight 0.7s ease forwards;
-        }
-        @keyframes fadeInRight {
-            from { opacity: 0; transform: translateX(20px); }
-            to { opacity: 1; transform: translateX(0); }
-        }
-        .headshot {
-            width: 60%;
-            max-width: 120px;
-            height: auto;
-            border-radius: 50%;
-            margin-bottom: 3px; /* Reduced margin under profile picture */
-            animation: rotate 0.4s linear forwards;
-        }
-        @keyframes rotate {
-            from { transform: rotate(0deg); }
-            to { transform: rotate(360deg); }
-        }
-        a {
-            color: #000060; /* Darker font color */
-            text-decoration: none;
-            transition: color 0.3s;
-        }
-        a:hover {
-            text-decoration: underline;
-            color: #ff6600;
         }
         @media screen and (max-width: 768px) {
             .logo {
@@ -167,9 +169,12 @@
             });
         });
     </script>
+
+    <!-- GIA 4Cs Interactive Tool Integration -->
+    <script type="text/javascript" src="https://4cs.gia.edu/interactive-4cs/js/embed.js?tool=carat-weight" charset="UTF-8"></script>
+
 </body>
 </html>
-
 
 
 
