@@ -1,3 +1,4 @@
+```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -18,18 +19,26 @@
             box-sizing: border-box;
         }
 
+        html {
+            scroll-behavior: smooth;
+        }
+
         body {
             font-family: Arial, Helvetica, sans-serif;
             margin: 0;
             padding: 18px;
             min-height: 100vh;
 
-            background: #ffffff;
+            background:
+                radial-gradient(circle at top, #fffdf4 0%, #ffffff 55%);
+
             color: #000060;
 
             display: flex;
             justify-content: center;
             align-items: flex-start;
+
+            overflow-x: hidden;
         }
 
         .container {
@@ -37,28 +46,41 @@
             max-width: 620px;
 
             background: #fffbe6;
-            border-radius: 16px;
 
-            padding: 32px 22px;
+            border: 1px solid rgba(0, 0, 96, 0.06);
+            border-radius: 18px;
+
+            padding: 34px 22px;
 
             text-align: center;
 
             box-shadow:
-                0 8px 30px rgba(0, 0, 0, 0.07);
+                0 10px 35px rgba(0, 0, 0, 0.07);
 
-            animation: fadeIn 0.5s ease;
+            opacity: 0;
+            transform: translateY(18px) scale(0.985);
+
+            transition:
+                opacity 0.8s ease,
+                transform 0.8s cubic-bezier(.2,.8,.2,1),
+                box-shadow 0.3s ease;
         }
 
-        @keyframes fadeIn {
-            from {
-                opacity: 0;
-                transform: translateY(6px);
-            }
+        .container.loaded {
+            opacity: 1;
+            transform: translateY(0) scale(1);
+        }
 
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
+        .container:hover {
+            box-shadow:
+                0 14px 42px rgba(0, 0, 0, 0.09);
+        }
+
+        /* HEADSHOT */
+
+        .headshot-link {
+            display: inline-block;
+            border-radius: 50%;
         }
 
         .headshot {
@@ -70,23 +92,51 @@
 
             margin-bottom: 12px;
 
+            box-shadow:
+                0 7px 20px rgba(0, 0, 0, 0.12);
+
+            opacity: 0;
+            transform: translateY(-12px) scale(0.9);
+
             transition:
-                transform 0.2s ease,
-                opacity 0.2s ease;
+                opacity 0.7s ease,
+                transform 0.7s cubic-bezier(.2,.8,.2,1),
+                box-shadow 0.3s ease;
+        }
+
+        .headshot.show {
+            opacity: 1;
+            transform: translateY(0) scale(1);
         }
 
         .headshot:hover {
-            transform: scale(1.03);
-            opacity: 0.92;
+            transform: scale(1.055);
+            box-shadow:
+                0 12px 28px rgba(0, 0, 0, 0.16);
         }
+
+        /* NAME */
 
         .name {
             margin: 4px 0 24px;
 
-            font-size: 34px;
+            font-size: 35px;
             font-weight: 700;
+            letter-spacing: -0.8px;
 
             color: #000060;
+
+            opacity: 0;
+            transform: translateY(10px);
+
+            transition:
+                opacity 0.6s ease,
+                transform 0.6s ease;
+        }
+
+        .name.show {
+            opacity: 1;
+            transform: translateY(0);
         }
 
         /* ICON BUTTONS */
@@ -103,33 +153,44 @@
         }
 
         .icon-button {
-            width: 48px;
-            height: 48px;
+            width: 50px;
+            height: 50px;
 
-            border-radius: 12px;
+            border-radius: 14px;
 
-            background: #ffffff;
+            background: rgba(255,255,255,0.92);
 
             display: flex;
             align-items: center;
             justify-content: center;
 
             box-shadow:
-                0 3px 12px rgba(0, 0, 0, 0.08);
+                0 4px 14px rgba(0, 0, 0, 0.07);
+
+            border: 1px solid rgba(0, 0, 96, 0.05);
+
+            opacity: 0;
+            transform: translateY(18px) scale(0.85);
 
             transition:
-                transform 0.2s ease,
-                box-shadow 0.2s ease,
-                background 0.2s ease;
+                opacity 0.45s ease,
+                transform 0.22s ease,
+                box-shadow 0.22s ease,
+                background 0.22s ease;
+
+            will-change: transform;
+        }
+
+        .icon-button.show {
+            opacity: 1;
+            transform: translateY(0) scale(1);
         }
 
         .icon-button:hover {
-            transform: translateY(-3px);
-
             box-shadow:
-                0 6px 18px rgba(0, 0, 0, 0.12);
+                0 9px 22px rgba(0, 0, 0, 0.13);
 
-            background: #fffdf5;
+            background: #ffffff;
         }
 
         .icon-button img {
@@ -137,63 +198,68 @@
             height: 26px;
 
             object-fit: contain;
+
+            pointer-events: none;
+
+            transition: transform 0.25s ease;
         }
 
-        /* JEWELERS TRULY */
-
-        .jewelers-section {
-            margin: 24px 0 8px;
-            padding-top: 20px;
-
-            border-top: 1px solid rgba(0, 0, 96, 0.10);
+        .icon-button:hover img {
+            transform: scale(1.08);
         }
 
-        .jewelers-link {
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-
-            gap: 8px;
-
-            color: #777;
-            font-size: 13px;
-
-            text-decoration: none;
-
-            transition:
-                color 0.2s ease,
-                transform 0.2s ease;
+        .icon-button.clicked {
+            animation: clickPulse 0.35s ease;
         }
 
-        .jewelers-link:hover {
-            color: #000060;
-            transform: translateY(-1px);
-        }
+        @keyframes clickPulse {
+            0% {
+                transform: scale(1);
+            }
 
-        .jewelers-logo {
-            width: 34px;
-            max-height: 24px;
-            object-fit: contain;
-            opacity: 0.65;
+            50% {
+                transform: scale(0.88);
+            }
+
+            100% {
+                transform: scale(1);
+            }
         }
 
         /* CONTENT SECTIONS */
 
         .section {
-            margin-top: 26px;
-            padding-top: 20px;
+            margin-top: 27px;
+            padding-top: 21px;
 
-            border-top: 1px solid rgba(0, 0, 96, 0.10);
+            border-top:
+                1px solid rgba(0, 0, 96, 0.10);
+
+            opacity: 0;
+            transform: translateY(24px);
+
+            transition:
+                opacity 0.8s ease,
+                transform 0.8s cubic-bezier(.2,.8,.2,1);
+        }
+
+        .section.visible {
+            opacity: 1;
+            transform: translateY(0);
         }
 
         .section-title {
-            margin-bottom: 12px;
+            margin-bottom: 13px;
 
             font-size: 14px;
             font-weight: 600;
 
+            letter-spacing: 0.2px;
+
             color: #555;
         }
+
+        /* GOLD */
 
         .gold-widget {
             width: 100%;
@@ -201,10 +267,26 @@
             height: 320px;
 
             border: 0;
-            border-radius: 10px;
+            border-radius: 12px;
 
             background: #ffffff;
+
+            box-shadow:
+                0 4px 18px rgba(0, 0, 0, 0.06);
+
+            transition:
+                transform 0.3s ease,
+                box-shadow 0.3s ease;
         }
+
+        .gold-widget:hover {
+            transform: translateY(-2px);
+
+            box-shadow:
+                0 9px 25px rgba(0, 0, 0, 0.10);
+        }
+
+        /* MOBILE */
 
         @media screen and (max-width: 600px) {
 
@@ -213,8 +295,8 @@
             }
 
             .container {
-                padding: 26px 14px;
-                border-radius: 12px;
+                padding: 27px 14px;
+                border-radius: 14px;
             }
 
             .headshot {
@@ -227,17 +309,30 @@
             }
 
             .icon-buttons {
-                gap: 10px;
+                gap: 9px;
             }
 
             .icon-button {
                 width: 46px;
                 height: 46px;
+                border-radius: 12px;
             }
 
             .icon-button img {
-                width: 25px;
-                height: 25px;
+                width: 24px;
+                height: 24px;
+            }
+        }
+
+        /* ACCESSIBILITY */
+
+        @media (prefers-reduced-motion: reduce) {
+
+            *,
+            *::before,
+            *::after {
+                animation-duration: 0.01ms !important;
+                transition-duration: 0.01ms !important;
             }
         }
     </style>
@@ -245,302 +340,447 @@
 
 <body>
 
-    <main class="container">
+<main class="container" id="mainContainer">
 
-        <!-- HEADSHOT -->
+    <!-- HEADSHOT -->
+
+    <a
+        href="https://www.linkedin.com/in/moshe-aziz/"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="headshot-link"
+    >
+        <img
+            src="1681476923082.jpeg"
+            alt="Moshe Aziz"
+            class="headshot"
+            id="headshot"
+        >
+    </a>
+
+
+    <!-- NAME -->
+
+    <h1 class="name" id="name">
+        Moshe Aziz
+    </h1>
+
+
+    <!-- CONTACT / SOCIAL BUTTONS -->
+
+    <div class="icon-buttons">
+
+
+        <!-- PHONE -->
+
+        <a
+            href="tel:+16464641935"
+            class="icon-button"
+            aria-label="Call Moshe Aziz"
+            title="Call"
+        >
+            <img
+                src="logophone.png"
+                alt="Phone"
+            >
+        </a>
+
+
+        <!-- WHATSAPP -->
+
+        <a
+            href="https://wa.me/16464641935"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="icon-button"
+            aria-label="WhatsApp"
+            title="WhatsApp"
+        >
+            <img
+                src="logowhatsapp.png"
+                alt="WhatsApp"
+            >
+        </a>
+
+
+        <!-- EMAIL -->
+
+        <a
+            href="mailto:info@mosheaziz.com"
+            class="icon-button"
+            aria-label="Email Moshe Aziz"
+            title="Email"
+        >
+            <img
+                src="logoemail.png"
+                alt="Email"
+            >
+        </a>
+
+
+        <!-- LINKEDIN -->
 
         <a
             href="https://www.linkedin.com/in/moshe-aziz/"
             target="_blank"
             rel="noopener noreferrer"
+            class="icon-button"
+            aria-label="LinkedIn"
+            title="LinkedIn"
         >
             <img
-                src="1681476923082.jpeg"
-                alt="Moshe Aziz"
-                class="headshot"
+                src="logolinkedin.png"
+                alt="LinkedIn"
             >
         </a>
 
-        <h1 class="name">
-            Moshe Aziz
-        </h1>
 
+        <!-- INSTAGRAM -->
 
-        <!-- ICON BUTTONS -->
-
-        <div class="icon-buttons">
-
-            <!-- PHONE -->
-
-            <a
-                href="tel:+16464641935"
-                class="icon-button"
-                aria-label="Call Moshe Aziz"
-                title="Call"
+        <a
+            href="https://www.instagram.com/jewelers_truly/"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="icon-button"
+            aria-label="Instagram"
+            title="Instagram"
+        >
+            <img
+                src="logoinsta.png"
+                alt="Instagram"
             >
-                <img
-                    src="logophone.png"
-                    alt="Phone"
-                >
-            </a>
+        </a>
 
 
-            <!-- WHATSAPP -->
+        <!-- TIKTOK -->
 
-            <a
-                href="https://wa.me/16464641935"
-                target="_blank"
-                rel="noopener noreferrer"
-                class="icon-button"
-                aria-label="WhatsApp"
-                title="WhatsApp"
+        <a
+            href="https://www.tiktok.com/@jewelers_truly?_t=8n0ifSYprnb&_r=1"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="icon-button"
+            aria-label="TikTok"
+            title="TikTok"
+        >
+            <img
+                src="logotiktak.png"
+                alt="TikTok"
             >
-                <img
-                    src="logowhatsapp.png"
-                    alt="WhatsApp"
-                >
-            </a>
+        </a>
 
 
-            <!-- EMAIL -->
+        <!-- JEWELERS TRULY -->
 
-            <a
-                href="mailto:info@mosheaziz.com"
-                class="icon-button"
-                aria-label="Email Moshe Aziz"
-                title="Email"
+        <a
+            href="https://jewelerstruly.com/"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="icon-button"
+            aria-label="Jewelers Truly"
+            title="Jewelers Truly"
+        >
+            <img
+                src="Logo-7-8-24-TransparentJT.png"
+                alt="Jewelers Truly"
             >
-                <img
-                    src="logoemail.png"
-                    alt="Email"
-                >
-            </a>
+        </a>
+
+    </div>
 
 
-            <!-- LINKEDIN -->
+    <!-- GIA -->
 
-            <a
-                href="https://www.linkedin.com/in/moshe-aziz/"
-                target="_blank"
-                rel="noopener noreferrer"
-                class="icon-button"
-                aria-label="LinkedIn"
-                title="LinkedIn"
-            >
-                <img
-                    src="logolinkedin.png"
-                    alt="LinkedIn"
-                >
-            </a>
+    <div class="section">
 
-
-            <!-- INSTAGRAM -->
-
-            <a
-                href="https://www.instagram.com/jewelers_truly/"
-                target="_blank"
-                rel="noopener noreferrer"
-                class="icon-button"
-                aria-label="Instagram"
-                title="Instagram"
-            >
-                <img
-                    src="logoinsta.png"
-                    alt="Instagram"
-                >
-            </a>
-
-
-            <!-- TIKTOK -->
-
-            <a
-                href="https://www.tiktok.com/@jewelers_truly?_t=8n0ifSYprnb&_r=1"
-                target="_blank"
-                rel="noopener noreferrer"
-                class="icon-button"
-                aria-label="TikTok"
-                title="TikTok"
-            >
-                <img
-                    src="logotiktak.png"
-                    alt="TikTok"
-                >
-            </a>
-
-
-            <!-- JEWELERS TRULY WEBSITE -->
-
-            <a
-                href="https://jewelerstruly.com/"
-                target="_blank"
-                rel="noopener noreferrer"
-                class="icon-button"
-                aria-label="Jewelers Truly"
-                title="Jewelers Truly"
-            >
-                <img
-                    src="Logo-7-8-24-TransparentJT.png"
-                    alt="Jewelers Truly"
-                >
-            </a>
-
+        <div class="section-title">
+            GIA Diamond Education
         </div>
 
+        <script
+            type="text/javascript"
+            src="https://4cs.gia.edu/interactive-4cs/js/embed.js"
+            charset="UTF-8">
+        </script>
 
-        <!-- JEWELERS TRULY SUBTLE BRANDING -->
+    </div>
 
-        <div class="jewelers-section">
 
-            <a
-                href="https://jewelerstruly.com/"
-                target="_blank"
-                rel="noopener noreferrer"
-                class="jewelers-link"
-            >
+    <!-- GOLD PRICE -->
 
-                <img
-                    src="Logo-7-8-24-TransparentJT.png"
-                    alt="Jewelers Truly"
-                    class="jewelers-logo"
-                >
+    <div class="section">
 
-                <span>
-                    Founder · Jewelers Truly
-                </span>
-
-            </a>
-
+        <div class="section-title">
+            Today's Gold Price
         </div>
 
+        <iframe
+            class="gold-widget"
+            src="https://www.goldbroker.com/widget/iframe/live/XAU/320?currency=USD"
+            title="Live Gold Price"
+            loading="lazy">
+        </iframe>
 
-        <!-- GIA -->
+    </div>
 
-        <div class="section">
-
-            <div class="section-title">
-                GIA Diamond Education
-            </div>
-
-            <script
-                type="text/javascript"
-                src="https://4cs.gia.edu/interactive-4cs/js/embed.js"
-                charset="UTF-8">
-            </script>
-
-        </div>
+</main>
 
 
-        <!-- GOLD PRICE -->
+<script>
+document.addEventListener("DOMContentLoaded", function () {
 
-        <div class="section">
-
-            <div class="section-title">
-                Today's Gold Price
-            </div>
-
-            <iframe
-                class="gold-widget"
-                src="https://www.goldbroker.com/widget/iframe/live/XAU/320?currency=USD"
-                title="Live Gold Price">
-            </iframe>
-
-        </div>
-
-    </main>
+    const container = document.getElementById("mainContainer");
+    const headshot = document.getElementById("headshot");
+    const name = document.getElementById("name");
+    const buttons = document.querySelectorAll(".icon-button");
+    const sections = document.querySelectorAll(".section");
 
 
-    <!-- CLOUDFLARE SCRIPT -->
+    /* -------------------------
+       PAGE ENTRANCE
+    ------------------------- */
 
-    <script>
-    (function(){
+    requestAnimationFrame(() => {
+        container.classList.add("loaded");
+    });
 
-        function c(){
 
-            var b =
-                a.contentDocument ||
-                (a.contentWindow && a.contentWindow.document);
+    setTimeout(() => {
+        headshot.classList.add("show");
+    }, 180);
 
-            if(b){
 
-                var d = b.createElement('script');
+    setTimeout(() => {
+        name.classList.add("show");
+    }, 330);
 
-                d.innerHTML =
-                    "window.__CF$cv$params={r:'a37f794a2b7e3453',t:'MTc4ODg4NjQ1Mg=='};" +
-                    "var a=document.createElement('script');" +
-                    "a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';" +
-                    "document.getElementsByTagName('head')[0].appendChild(a);";
 
-                b.getElementsByTagName('head')[0].appendChild(d);
-            }
+    /* -------------------------
+       STAGGER ICON BUTTONS
+    ------------------------- */
+
+    buttons.forEach((button, index) => {
+
+        setTimeout(() => {
+            button.classList.add("show");
+        }, 450 + (index * 85));
+
+    });
+
+
+    /* -------------------------
+       FLOATING HEADSHOT
+    ------------------------- */
+
+    let floatPosition = 0;
+    let floatDirection = 1;
+
+    function floatHeadshot() {
+
+        floatPosition += 0.015 * floatDirection;
+
+        if (floatPosition > 1) {
+            floatDirection = -1;
         }
 
-        if(document.body){
-
-            var a = document.createElement('iframe');
-
-            a.height = 1;
-            a.width = 1;
-
-            a.style.position = 'absolute';
-            a.style.top = 0;
-            a.style.left = 0;
-            a.style.border = 'none';
-            a.style.visibility = 'hidden';
-
-            document.body.appendChild(a);
-
-            if('loading' !== document.readyState){
-
-                c();
-
-            }
-
-            else if(window.addEventListener){
-
-                document.addEventListener(
-                    'DOMContentLoaded',
-                    c
-                );
-
-            }
-
-            else {
-
-                var e =
-                    document.onreadystatechange ||
-                    function(){};
-
-                document.onreadystatechange =
-                    function(b){
-
-                        e(b);
-
-                        if(
-                            'loading' !==
-                            document.readyState
-                        ){
-
-                            document.onreadystatechange = e;
-
-                            c();
-                        }
-                    };
-            }
+        if (floatPosition < -1) {
+            floatDirection = 1;
         }
 
-    })();
-    </script>
+        if (
+            !headshot.matches(":hover") &&
+            headshot.classList.contains("show")
+        ) {
+
+            headshot.style.translate =
+                `0 ${floatPosition * 2}px`;
+
+        }
+
+        requestAnimationFrame(floatHeadshot);
+    }
+
+    floatHeadshot();
 
 
-    <!-- CLOUDFLARE ANALYTICS -->
+    /* -------------------------
+       BUTTON MOUSE TILT
+    ------------------------- */
 
-    <script
-        type="module"
-        src="https://static.cloudflareinsights.com/beacon.min.js/v31edd6df95cf4e85bb4c19e7a9bdbcba1788362987495"
-        integrity="sha512-iIg7k2xntmwu6/uSb5tpc/hySgZc4eoL31yB29W6tJFo2akwjPWcEqnCEdJvGexCL0KEQwVYv5BlowfhVz26hg=="
-        data-cf-beacon='{"version":"2024.11.0","token":"3e81b51674884fc2996c1f011c0aa4d0","r":1,"spa":2}'
-        crossorigin="anonymous">
-    </script>
+    buttons.forEach(button => {
+
+        button.addEventListener("mousemove", function (event) {
+
+            const rect = button.getBoundingClientRect();
+
+            const x =
+                event.clientX -
+                rect.left -
+                rect.width / 2;
+
+            const y =
+                event.clientY -
+                rect.top -
+                rect.height / 2;
+
+            const rotateX =
+                -(y / rect.height) * 10;
+
+            const rotateY =
+                (x / rect.width) * 10;
+
+            button.style.transform =
+                `translateY(-4px)
+                 perspective(400px)
+                 rotateX(${rotateX}deg)
+                 rotateY(${rotateY}deg)
+                 scale(1.05)`;
+
+        });
+
+
+        button.addEventListener("mouseleave", function () {
+
+            button.style.transform =
+                "translateY(0) rotateX(0) rotateY(0) scale(1)";
+
+        });
+
+
+        /* CLICK EFFECT */
+
+        button.addEventListener("click", function () {
+
+            button.classList.remove("clicked");
+
+            void button.offsetWidth;
+
+            button.classList.add("clicked");
+
+        });
+
+    });
+
+
+    /* -------------------------
+       SECTION SCROLL REVEAL
+    ------------------------- */
+
+    const observer = new IntersectionObserver(
+        entries => {
+
+            entries.forEach(entry => {
+
+                if (entry.isIntersecting) {
+
+                    entry.target.classList.add("visible");
+
+                    observer.unobserve(entry.target);
+                }
+
+            });
+
+        },
+        {
+            threshold: 0.12
+        }
+    );
+
+
+    sections.forEach(section => {
+        observer.observe(section);
+    });
+
+});
+</script>
+
+
+<!-- CLOUDFLARE -->
+
+<script>
+(function(){
+
+    function c(){
+
+        var b =
+            a.contentDocument ||
+            (a.contentWindow && a.contentWindow.document);
+
+        if(b){
+
+            var d = b.createElement('script');
+
+            d.innerHTML =
+                "window.__CF$cv$params={r:'a37f794a2b7e3453',t:'MTc4ODg4NjQ1Mg=='};" +
+                "var a=document.createElement('script');" +
+                "a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';" +
+                "document.getElementsByTagName('head')[0].appendChild(a);";
+
+            b.getElementsByTagName('head')[0].appendChild(d);
+        }
+    }
+
+    if(document.body){
+
+        var a = document.createElement('iframe');
+
+        a.height = 1;
+        a.width = 1;
+
+        a.style.position = 'absolute';
+        a.style.top = 0;
+        a.style.left = 0;
+        a.style.border = 'none';
+        a.style.visibility = 'hidden';
+
+        document.body.appendChild(a);
+
+        if('loading' !== document.readyState){
+
+            c();
+
+        } else if(window.addEventListener){
+
+            document.addEventListener(
+                'DOMContentLoaded',
+                c
+            );
+
+        } else {
+
+            var e =
+                document.onreadystatechange ||
+                function(){};
+
+            document.onreadystatechange =
+                function(b){
+
+                    e(b);
+
+                    if(
+                        'loading' !==
+                        document.readyState
+                    ){
+
+                        document.onreadystatechange = e;
+                        c();
+
+                    }
+                };
+        }
+    }
+
+})();
+</script>
+
+
+<script
+    type="module"
+    src="https://static.cloudflareinsights.com/beacon.min.js/v31edd6df95cf4e85bb4c19e7a9bdbcba1788362987495"
+    integrity="sha512-iIg7k2xntmwu6/uSb5tpc/hySgZc4eoL31yB29W6tJFo2akwjPWcEqnCEdJvGexCL0KEQwVYv5BlowfhVz26hg=="
+    data-cf-beacon='{"version":"2024.11.0","token":"3e81b51674884fc2996c1f011c0aa4d0","r":1,"spa":2}'
+    crossorigin="anonymous">
+</script>
 
 </body>
 </html>
+```
