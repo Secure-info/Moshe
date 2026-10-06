@@ -3,240 +3,544 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <title>Moshe Aziz</title>
+
+    <meta
+        name="description"
+        content="Moshe Aziz — entrepreneur and founder of Jewelers Truly."
+    >
+
     <link rel="icon" type="image/png" href="YourNameHeadshot2.png">
+
     <style>
+        * {
+            box-sizing: border-box;
+        }
+
         body {
-            font-family: Arial, sans-serif; /* Yes, I, Moshe Aziz, wrote this code from scratch. I’m always open to serious opportunities in tech and interested in connecting with people who see value in what I can build. Serious inquiries only. Please do not contact me to sell products, services, consulting, or marketing. I am the investment; I am not looking to purchase your services or products. */
+            font-family: Arial, Helvetica, sans-serif;
             margin: 0;
-            padding: 0;
-            background-color: #fff;
+            padding: 18px;
+            min-height: 100vh;
+
+            background: #ffffff;
             color: #000060;
+
             display: flex;
             justify-content: center;
             align-items: flex-start;
-            min-height: 100vh;
         }
 
         .container {
-            width: 90%;
-            max-width: 400px;
-            margin: 5px 5px;
-            padding: 5px; 
-            background-color: #fffbe6;
-            border-radius: 5px;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            width: 100%;
+            max-width: 620px;
+
+            background: #fffbe6;
+            border-radius: 16px;
+
+            padding: 32px 22px;
+
             text-align: center;
-            animation: fadeIn 1s ease;
-        }
 
-        @media screen and (min-width: 768px) {
-            .container {
-                max-width: 600px;
-            }
-        }
+            box-shadow:
+                0 8px 30px rgba(0, 0, 0, 0.07);
 
-        @media screen and (min-width: 1024px) {
-            .container {
-                max-width: 800px;
-            }
-        }
-
-        @media screen and (min-width: 1440px) {
-            .container {
-                max-width: 1000px;
-            }
+            animation: fadeIn 0.5s ease;
         }
 
         @keyframes fadeIn {
-            from { opacity: 0; }
-            to { opacity: 1; }
-        }
+            from {
+                opacity: 0;
+                transform: translateY(6px);
+            }
 
-        .logo {
-            width: 50%;
-            max-width: 150px;
-            height: auto;
-            margin-bottom: 10px; 
-            animation: bounce 0.5s ease forwards;
-        }
-
-        @keyframes bounce {
-            0% { transform: translateY(-10px); }
-            100% { transform: translateY(0); }
-        }
-
-        .business-name {
-            font-size: 39px;
-            font-weight: bold;
-            color: #000060;
-            margin: 10px 0;
-            animation: fadeInLeft 0.7s ease forwards;
-        }
-
-        @keyframes fadeInLeft {
-            from { opacity: 0; transform: translateX(-20px); }
-            to { opacity: 1; transform: translateX(0); }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
         }
 
         .headshot {
-            width: 60%;
-            max-width: 120px;
-            height: auto;
+            width: 118px;
+            height: 118px;
+
             border-radius: 50%;
-            margin-bottom: 15px; 
-            animation: rotate 0.4s linear forwards;
+            object-fit: cover;
+
+            margin-bottom: 12px;
+
+            transition:
+                transform 0.2s ease,
+                opacity 0.2s ease;
         }
 
-        @keyframes rotate {
-            from { transform: rotate(0deg); }
-            to { transform: rotate(360deg); }
+        .headshot:hover {
+            transform: scale(1.03);
+            opacity: 0.92;
         }
 
         .name {
-            font-size: 32px; 
+            margin: 4px 0 24px;
+
+            font-size: 34px;
+            font-weight: 700;
+
             color: #000060;
-            margin: 15px 0; 
-            animation: fadeInRight 0.7s ease forwards;
-        }
-.contact-links a {
-    font-size: 22px; 
-    color: inherit; 
-    vertical-align: middle; /* Align with icons if present */
-}
-        .contact-info {
-            font-size: 22px; 
-            color: #000060;
-            margin-bottom: 3px; /* Consistent spacing for contact info */
-            animation: fadeInRight 0.7s ease forwards;
-        }
-.icon.logoaddress {
-    width: 20px; /* Adjust this value to make the icon smaller */
-    height: auto; /* Maintain the aspect ratio */
-    vertical-align: middle; /* Ensure it aligns properly with text */
-    margin-right: 3px; /* Adjust margin if needed */
-}
-        .icon {
-            width: 22px;
-            height: auto;
-            vertical-align: middle;
-            margin-right: 3px;
         }
 
-        a {
-            color: #000060;
+        /* ICON BUTTONS */
+
+        .icon-buttons {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap;
+
+            gap: 12px;
+
+            margin: 0 auto 24px;
+        }
+
+        .icon-button {
+            width: 48px;
+            height: 48px;
+
+            border-radius: 12px;
+
+            background: #ffffff;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            box-shadow:
+                0 3px 12px rgba(0, 0, 0, 0.08);
+
+            transition:
+                transform 0.2s ease,
+                box-shadow 0.2s ease,
+                background 0.2s ease;
+        }
+
+        .icon-button:hover {
+            transform: translateY(-3px);
+
+            box-shadow:
+                0 6px 18px rgba(0, 0, 0, 0.12);
+
+            background: #fffdf5;
+        }
+
+        .icon-button img {
+            width: 26px;
+            height: 26px;
+
+            object-fit: contain;
+        }
+
+        /* JEWELERS TRULY */
+
+        .jewelers-section {
+            margin: 24px 0 8px;
+            padding-top: 20px;
+
+            border-top: 1px solid rgba(0, 0, 96, 0.10);
+        }
+
+        .jewelers-link {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+
+            gap: 8px;
+
+            color: #777;
+            font-size: 13px;
+
             text-decoration: none;
-            transition: color 0.3s;
+
+            transition:
+                color 0.2s ease,
+                transform 0.2s ease;
         }
 
-        a:hover {
-            text-decoration: underline;
-            color: #ff6600;
+        .jewelers-link:hover {
+            color: #000060;
+            transform: translateY(-1px);
         }
 
-        .social-icons {
-            margin: 20px;
+        .jewelers-logo {
+            width: 34px;
+            max-height: 24px;
+            object-fit: contain;
+            opacity: 0.65;
         }
 
-        .social-icons img {
-            width: 32px;
-            height: 32px;
-            margin-right: 10px;
-            transition: transform 0.3s;
+        /* CONTENT SECTIONS */
+
+        .section {
+            margin-top: 26px;
+            padding-top: 20px;
+
+            border-top: 1px solid rgba(0, 0, 96, 0.10);
         }
 
-        .social-icons img:hover {
-            transform: scale(1.1);
+        .section-title {
+            margin-bottom: 12px;
+
+            font-size: 14px;
+            font-weight: 600;
+
+            color: #555;
         }
 
-        @media screen and (max-width: 768px) {
-            .logo {
-                width: 60%;
-                max-width: 100px;
+        .gold-widget {
+            width: 100%;
+            max-width: 430px;
+            height: 320px;
+
+            border: 0;
+            border-radius: 10px;
+
+            background: #ffffff;
+        }
+
+        @media screen and (max-width: 600px) {
+
+            body {
+                padding: 8px;
+            }
+
+            .container {
+                padding: 26px 14px;
+                border-radius: 12px;
             }
 
             .headshot {
-    width: 60%;
-    max-width: 120px;
-    height: auto;
-    border-radius: 50%;
-    margin-bottom: 3px;
-    transition: transform 0.3s ease, opacity 0.3s ease;
-}
-
-a:hover .headshot {
-    transform: scale(1.05); /* Slightly enlarge the image on hover */
-    opacity: 0.8; /* Slightly reduce opacity on hover */
-}
-
-
-            .business-name {
-                font-size: 36px;
+                width: 104px;
+                height: 104px;
             }
 
-            .name, .contact-info {
-                font-size: 30 px;
+            .name {
+                font-size: 30px;
             }
-        }
 
-        .hover-effect {
-            transition: transform 0.3s, box-shadow 0.3s;
-            cursor: pointer;
-        }
+            .icon-buttons {
+                gap: 10px;
+            }
 
-        .hover-effect:hover {
-            transform: scale(1.05);
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+            .icon-button {
+                width: 46px;
+                height: 46px;
+            }
+
+            .icon-button img {
+                width: 25px;
+                height: 25px;
+            }
         }
     </style>
 </head>
+
 <body>
-    <div class="container">
-        <img src="Logo-7-8-24-TransparentJT.png" alt="Jewelers Truly Logo" class="logo">
-        <p class="business-name">Jewelers Truly</p>
-<a href="https://www.linkedin.com/in/moshe-aziz" target="_blank">
-    <img src="1681476923082.jpeg" alt="Moshe Aziz" class="headshot">
-</a>
-        <p class="name">Moshe Aziz</p>
-        <div class="contact-links">
-          <!-- WhatsApp link -->
-<a href="https://wa.me/16464641935" target="_blank" class="hover-effect">
-    <img src="logowhatsapp.png" alt="WhatsApp Icon" class="icon">
-</a>
-<!-- Phone call link -->
-<a href="tel:+16464641935" class="hover-effect">
-    +1(646) 464-1935
-</a>
-          <p class="contact-info">
-    <img src="logoaddress.png" alt="Map Icon" class="icon logoadress"> 58 W 47th Street, New York, NY
-</p>
-            <p class="contact-info">
-                <img src="logoemail.png" alt="Email Icon" class="icon">
-                <a href="mailto:moshe@JewelersTruly.com" class="hover-effect">info@mosheaziz.com</a>
-            </p>
-            <p class="contact-info">
-                <img src="logowebsite.png" alt="Website Icon" class="icon">
-                <a href="https://jewelerstruly.com/" target="_blank" class="hover-effect">JewelersTruly.com</a>
-            </p>
-            <div class="social-icons">
-                <a href="https://www.linkedin.com/in/moshe-aziz/" class="hover-effect"><img src="logolinkedin.png" alt="LinkedIn"></a>
-                <a href="https://www.instagram.com/jewelers_truly/" class="hover-effect"><img src="logoinsta.png" alt="Instagram"></a>
-                <a href="https://www.tiktok.com/@jewelers_truly?_t=8n0ifSYprnb&_r=1" class="hover-effect"><img src="logotiktak.png" alt="TikTok"></a>
-            </div>
-            <div>
-                <script type="text/javascript" src="https://4cs.gia.edu/interactive-4cs/js/embed.js" charset="UTF-8"></script>  
-            </div>
-            <script>
-                document.querySelectorAll('.hover-effect').forEach(item => {
-                    item.addEventListener('click', event => {
-                        event.target.style.transform = 'scale(1.1)';
-                        setTimeout(() => {
-                            event.target.style.transform = 'scale(1)';
-                        }, 200);
-                    });
-                });
-            </script>
+
+    <main class="container">
+
+        <!-- HEADSHOT -->
+
+        <a
+            href="https://www.linkedin.com/in/moshe-aziz/"
+            target="_blank"
+            rel="noopener noreferrer"
+        >
+            <img
+                src="1681476923082.jpeg"
+                alt="Moshe Aziz"
+                class="headshot"
+            >
+        </a>
+
+        <h1 class="name">
+            Moshe Aziz
+        </h1>
+
+
+        <!-- ICON BUTTONS -->
+
+        <div class="icon-buttons">
+
+            <!-- PHONE -->
+
+            <a
+                href="tel:+16464641935"
+                class="icon-button"
+                aria-label="Call Moshe Aziz"
+                title="Call"
+            >
+                <img
+                    src="logophone.png"
+                    alt="Phone"
+                >
+            </a>
+
+
+            <!-- WHATSAPP -->
+
+            <a
+                href="https://wa.me/16464641935"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="icon-button"
+                aria-label="WhatsApp"
+                title="WhatsApp"
+            >
+                <img
+                    src="logowhatsapp.png"
+                    alt="WhatsApp"
+                >
+            </a>
+
+
+            <!-- EMAIL -->
+
+            <a
+                href="mailto:info@mosheaziz.com"
+                class="icon-button"
+                aria-label="Email Moshe Aziz"
+                title="Email"
+            >
+                <img
+                    src="logoemail.png"
+                    alt="Email"
+                >
+            </a>
+
+
+            <!-- LINKEDIN -->
+
+            <a
+                href="https://www.linkedin.com/in/moshe-aziz/"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="icon-button"
+                aria-label="LinkedIn"
+                title="LinkedIn"
+            >
+                <img
+                    src="logolinkedin.png"
+                    alt="LinkedIn"
+                >
+            </a>
+
+
+            <!-- INSTAGRAM -->
+
+            <a
+                href="https://www.instagram.com/jewelers_truly/"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="icon-button"
+                aria-label="Instagram"
+                title="Instagram"
+            >
+                <img
+                    src="logoinsta.png"
+                    alt="Instagram"
+                >
+            </a>
+
+
+            <!-- TIKTOK -->
+
+            <a
+                href="https://www.tiktok.com/@jewelers_truly?_t=8n0ifSYprnb&_r=1"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="icon-button"
+                aria-label="TikTok"
+                title="TikTok"
+            >
+                <img
+                    src="logotiktak.png"
+                    alt="TikTok"
+                >
+            </a>
+
+
+            <!-- JEWELERS TRULY WEBSITE -->
+
+            <a
+                href="https://jewelerstruly.com/"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="icon-button"
+                aria-label="Jewelers Truly"
+                title="Jewelers Truly"
+            >
+                <img
+                    src="Logo-7-8-24-TransparentJT.png"
+                    alt="Jewelers Truly"
+                >
+            </a>
+
         </div>
-    </div>
+
+
+        <!-- JEWELERS TRULY SUBTLE BRANDING -->
+
+        <div class="jewelers-section">
+
+            <a
+                href="https://jewelerstruly.com/"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="jewelers-link"
+            >
+
+                <img
+                    src="Logo-7-8-24-TransparentJT.png"
+                    alt="Jewelers Truly"
+                    class="jewelers-logo"
+                >
+
+                <span>
+                    Founder · Jewelers Truly
+                </span>
+
+            </a>
+
+        </div>
+
+
+        <!-- GIA -->
+
+        <div class="section">
+
+            <div class="section-title">
+                GIA Diamond Education
+            </div>
+
+            <script
+                type="text/javascript"
+                src="https://4cs.gia.edu/interactive-4cs/js/embed.js"
+                charset="UTF-8">
+            </script>
+
+        </div>
+
+
+        <!-- GOLD PRICE -->
+
+        <div class="section">
+
+            <div class="section-title">
+                Today's Gold Price
+            </div>
+
+            <iframe
+                class="gold-widget"
+                src="https://www.goldbroker.com/widget/iframe/live/XAU/320?currency=USD"
+                title="Live Gold Price">
+            </iframe>
+
+        </div>
+
+    </main>
+
+
+    <!-- CLOUDFLARE SCRIPT -->
+
+    <script>
+    (function(){
+
+        function c(){
+
+            var b =
+                a.contentDocument ||
+                (a.contentWindow && a.contentWindow.document);
+
+            if(b){
+
+                var d = b.createElement('script');
+
+                d.innerHTML =
+                    "window.__CF$cv$params={r:'a37f794a2b7e3453',t:'MTc4ODg4NjQ1Mg=='};" +
+                    "var a=document.createElement('script');" +
+                    "a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';" +
+                    "document.getElementsByTagName('head')[0].appendChild(a);";
+
+                b.getElementsByTagName('head')[0].appendChild(d);
+            }
+        }
+
+        if(document.body){
+
+            var a = document.createElement('iframe');
+
+            a.height = 1;
+            a.width = 1;
+
+            a.style.position = 'absolute';
+            a.style.top = 0;
+            a.style.left = 0;
+            a.style.border = 'none';
+            a.style.visibility = 'hidden';
+
+            document.body.appendChild(a);
+
+            if('loading' !== document.readyState){
+
+                c();
+
+            }
+
+            else if(window.addEventListener){
+
+                document.addEventListener(
+                    'DOMContentLoaded',
+                    c
+                );
+
+            }
+
+            else {
+
+                var e =
+                    document.onreadystatechange ||
+                    function(){};
+
+                document.onreadystatechange =
+                    function(b){
+
+                        e(b);
+
+                        if(
+                            'loading' !==
+                            document.readyState
+                        ){
+
+                            document.onreadystatechange = e;
+
+                            c();
+                        }
+                    };
+            }
+        }
+
+    })();
+    </script>
+
+
+    <!-- CLOUDFLARE ANALYTICS -->
+
+    <script
+        type="module"
+        src="https://static.cloudflareinsights.com/beacon.min.js/v31edd6df95cf4e85bb4c19e7a9bdbcba1788362987495"
+        integrity="sha512-iIg7k2xntmwu6/uSb5tpc/hySgZc4eoL31yB29W6tJFo2akwjPWcEqnCEdJvGexCL0KEQwVYv5BlowfhVz26hg=="
+        data-cf-beacon='{"version":"2024.11.0","token":"3e81b51674884fc2996c1f011c0aa4d0","r":1,"spa":2}'
+        crossorigin="anonymous">
+    </script>
+
 </body>
 </html>
